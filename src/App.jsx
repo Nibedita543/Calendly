@@ -1,9 +1,11 @@
 import SignUp from './Components/SignUp/SignUp'
+import SignUpRIght from './Components/SignUp/SignUpRIght'
 
 function App() {
 
   return (
-    <SignUp/>
+    // <SignUp/>
+    <SignUpRIght/>
   )
 }
 
