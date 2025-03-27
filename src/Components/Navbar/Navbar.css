@@ -1,0 +1,255 @@
+.navbar-container {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  position: fixed !important;
+  background-color: white !important;
+  display: flex !important;
+  flex-direction: column !important;
+  -webkit-box-pack: center !important;
+  justify-content: center !important;
+  -webkit-box-align: center !important;
+  align-items: center !important;
+  width: 100vw !important;
+  height: 95px;
+}
+
+.navbar-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  height: 100% !important;
+}
+
+.logo {
+  width: auto;
+  min-width: auto;
+  max-width: 100%;
+  height: 40px;
+  min-height: auto;
+  max-height: 100%;
+}
+
+.menu {
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  width: auto;
+  gap: 30px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.menu-item {
+  display: inline-flex !important;
+  -webkit-box-pack: center !important;
+  justify-content: center !important;
+  -webkit-box-align: center !important;
+  align-items: center !important;
+  gap: 2px !important;
+  font-size: 1rem !important;
+  line-height: 1.6 !important;
+  font-weight: 700 !important;
+  color: rgb(1, 10, 17) !important;
+  white-space: nowrap !important;
+  transition: 0.2s linear !important;
+}
+
+.icon {
+  color: #0b2545 !important;
+}
+
+.get-started {
+  cursor: pointer !important;
+  transition: 0.2s linear, background-position 1ms, background-size 1ms;
+  color: rgb(255, 255, 255) !important;
+  border: 1px solid rgb(0, 107, 255) !important;
+  background-color: rgb(0, 107, 255) !important;
+  padding: 10px 16px !important;
+  font-size: 0.875rem !important;
+  line-height: 1.4 !important;
+  position: relative !important;
+  height: fit-content !important;
+  flex-direction: row !important;
+  display: inline-flex !important;
+  opacity: 1 !important;
+  -webkit-box-align: center !important;
+  align-items: center !important;
+  -webkit-box-pack: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  border-radius: 8px !important;
+  text-align: center !important;
+  font-family: __gilroy_2ec981, __gilroy_Fallback_2ec981 !important;
+  font-weight: 600 !important;
+}
+
+/* Language Dropdown */
+.navbar-top-container {
+  width: 100% !important;
+  height: 56px !important;
+  background-color: rgb(248, 249, 251) !important; /* Light background */
+  display: flex !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  padding: 0 20px !important; /* Space on left & right */
+}
+.navbar-top-container *:hover {
+  color: rgb(0, 107, 255) !important;
+}
+.menu-item:hover {
+  color: rgb(0, 107, 255) !important;
+}
+
+.navbar-top {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end;
+  height: 100%;
+  width: 83%;
+}
+.icon {
+  width: 16px !important;
+  height: 16px !important;
+  margin-right: 2px !important;
+  color: rgb(71, 103, 136) !important;
+}
+.language-dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.dropdown-btn {
+  display: flex !important;
+  align-items: center !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: rgb(71, 103, 136) !important;
+  background: none !important;
+  border: none;
+  cursor: pointer !important;
+  transition: 0.2s ease-in-out !important;
+  list-style: 28px !important;
+  font-family: __gilroy_2ec981 !important;
+}
+.dropdown-icon {
+  margin-left: 5px;
+}
+.dropdown-menu {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  background: white;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  min-width: 120px;
+  z-index: 999;
+}
+.dropdown-item {
+  width: 100%;
+  padding: 8px 12px;
+  text-align: left;
+  font-size: 14px;
+  color: #0b2545;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+.menu-item {
+  color: rgb(71, 103, 136) !important;
+  font-weight: 700 !important;
+  text-transform: none !important;
+  font-size: 17px !important;
+  font-family: __gilroy_2ec981 !important;
+}
+
+/* Language Dropdown */
+@media screen and (max-width: 768px) {
+  .navbar-top {
+    display: flex !important;
+    justify-content: space-between !important; /* Separate into two sides */
+    align-items: center !important;
+    width: 100% !important;
+    padding: 0 15px !important;
+  }
+
+  /* Fix icon & language dropdown alignment */
+  .icon {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-right: 10px !important; /* Adds space between icon & text */
+  }
+
+  .language-dropdown {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important; /* Adds space between icon & dropdown */
+  }
+
+  /* Ensure dropdown button doesn't overlap */
+  .dropdown-btn {
+    display: flex !important;
+    align-items: center !important;
+    padding-left: 5px !important; /* Add spacing */
+  }
+
+  /* Move menu-item (Talk to Sales) to right properly */
+  .menu-item {
+    margin-left: auto !important; /* Push to right side */
+    text-align: right !important;
+  }
+}
+
+/* Solutions Dropdown Styling */
+.solutions-dropdown {
+  width: 1000px;
+  background: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  padding-top: 50px;
+  justify-content: center !important;
+}
+
+.dropdown-content {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-left: 30px;
+}
+
+.dropdown-content > div {
+  flex: 1;
+  padding: 10px;
+}
+
+.dropdown-content h6 {
+  font-size: 14px;
+  font-weight: bold;
+  color: gray;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.dropdown-content .MuiListItemText-primary {
+  font-size: 16px !important;
+  color: rgb(11, 53, 88) !important;
+}
+
+.dropdown-content .MuiListItem-button:hover {
+  background-color: rgba(0, 107, 255, 0.1) !important;
+}
+.one{
+   border: 1px solid rgba(0, 0, 0, 0.15);
+   height: ;
+}
