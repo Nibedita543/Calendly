@@ -16,6 +16,7 @@ import LanguageIcon from "@mui/icons-material/Language";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import { FaAngleDown } from "react-icons/fa";
+import ResourcesPopover from "./ResourcesPopover.jsx";
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -54,10 +55,11 @@ const Navbar = () => {
                 <button className="dropdown-item">Español</button>
                 <button className="dropdown-item">Français</button>
                 <button className="dropdown-item">Deutsch</button>
+                <button className="dropdown-item">Portugues</button>
               </div>
             )}
           </div>
-          <Button className="menu-item">Talk to sales</Button>
+          <Button className="dropdown-btn">Talk to sales</Button>
         </div>
       </AppBar>
 
@@ -69,7 +71,7 @@ const Navbar = () => {
             className="logo"
           />
           <div className="menu desktop-menu">
-            <Button className="menu-item">Product</Button>
+            <Button className="menu-item ">Product</Button>
             <Button
               className="menu-item"
               aria-describedby={id}
@@ -79,19 +81,11 @@ const Navbar = () => {
             </Button>
             <Button className="menu-item">Enterprise</Button>
             <Button className="menu-item">Pricing</Button>
-            <Button className="menu-item">Resources</Button>
+            <ResourcesPopover />
           </div>
-          <div className="right-side">
-            <Button variant="contained" className="get-started">
-              <span className="get-started-text">Get Started</span>
-            </Button>
-            <IconButton
-              className="menu-icon"
-              onClick={() => setMobileOpen(true)}
-            >
-              <MenuIcon />
-            </IconButton>
-          </div>
+          <Button variant="contained" className="get-started">
+            <span className="get-started-text">Get Started</span>
+          </Button>
         </Toolbar>
       </AppBar>
 
