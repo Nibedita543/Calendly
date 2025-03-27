@@ -1,15 +1,15 @@
+import { Routes, Route } from "react-router-dom";
 import SignUp from "./Components/SignUp/SignUp";
-import SignUpRIght from "./Components/SignUp/SignUpRIght";
-import React from "react";
-import Navbar from "./Components/Navbar/Navbar.jsx";
+import Navbar from "./Components/Navbar/Navbar";
 
 function App() {
   return (
-    <div>
-      {/* <SignUp/> */}
-      <SignUpRIght />
+    <>
       <Navbar />
-    </div>
+      <Routes>
+        <Route path="/" element={<SignUp />} />
+      </Routes>
+    </>
   );
 }
 
