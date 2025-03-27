@@ -1,0 +1,112 @@
+.menu-item {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 10px; /* Adjusts spacing between elements */
+  position: relative;
+  cursor: pointer;
+  padding: 10px 15px;
+  font-weight: 500;
+  color: #0056d2;
+}
+
+.menu-link {
+  display: inline-flex !important;
+  -webkit-box-pack: center !important;
+  justify-content: center !important;
+  -webkit-box-align: center !important;
+  align-items: center !important;
+  gap: 2px !important;
+  font-size: 1rem !important;
+  line-height: 1.6 !important;
+  font-weight: 700 !important;
+  color: rgb(11, 53, 88) !important;
+  white-space: nowrap !important;
+  transition: 0.2s linear !important;
+}
+
+
+
+.popover-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Distributes columns evenly */
+  flex-wrap: nowrap; /* Prevents wrapping to the next row */
+  width: 100%;
+  height: 500px;
+  padding-top: 30px;
+}
+
+.popover-content .MuiGrid-item {
+  flex: 1; /* Ensures equal width for all sections */
+  min-width: 0; /* Prevents content from overflowing */
+  text-align: left;
+
+  height: 100%;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #a0aec0;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.resource-item {
+  margin-bottom: 15px;
+  background: #eb4545;
+}
+
+.resource-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a202c;
+}
+
+.resource-desc {
+  font-size: 14px;
+  color: yellow;
+}
+
+.promo-section {
+  text-align: center;
+  padding: 20px;
+  background: #2b6ccd;
+  border-radius: 10px;
+}
+
+.promo-image {
+  display: block; /* Ensures the image is visible */
+  max-width: 100%; /* Ensures responsiveness */
+  height: auto; /* Keeps aspect ratio */
+  border-radius: 8px;
+}
+
+.promo-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 5px;
+}
+
+.promo-desc {
+  font-size: 14px;
+  color: #4a5568;
+  margin-bottom: 10px;
+}
+
+.promo-btn {
+  background: #0056d2;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 15px;
+  border-radius: 6px;
+  text-transform: none;
+}
+
+.promo-btn:hover {
+  background: #0041a8;
+}
