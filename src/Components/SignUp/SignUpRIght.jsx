@@ -1,6 +1,5 @@
 import {
   Container,
-  Grid,
   List,
   ListItem,
   ListItemIcon,
@@ -8,6 +7,7 @@ import {
   Paper,
   Typography,
 } from "@mui/material";
+import Grid from "@mui/material/Grid2";
 import React from "react";
 import "./SignUpRIght.css";
 
@@ -31,7 +31,7 @@ export default function SignUpRIght() {
   ];
 
   return (
-    <Container maxWidth="sm">
+    <Container maxWidth="md">
       <Typography gutterBottom id="signupright-heading">
         Create your free account
       </Typography>
@@ -54,16 +54,27 @@ export default function SignUpRIght() {
           </ListItem>
         ))}
       </List>
-      <Grid container spacing={2}>
-        {imageurls.map((src, index) => (
-          <Grid item xs={6} sm={3} key={index}>
-            <Paper elevation={3}>
-              <img
-                src={src}
-                alt={`Image ${index + 1}`}
-                style={{ width: "100%" }}
-              />
-            </Paper>
+      <Grid container spacing={5} columns={12} justifyContent={"center"}>
+        {imageurls?.map((src, index) => (
+          <Grid
+            key={index}
+            size={{
+              xs: 12,
+              sm: 6,
+              md: 3,
+            }}
+          >
+            <img
+              key={index}
+              src={src}
+              alt={`Image ${index + 1}`}
+              style={{
+                width: "auto",
+                objectFit: "contain",
+                filter: "invert(0.5)",
+                height: "25px",
+              }}
+            />
           </Grid>
         ))}
       </Grid>
