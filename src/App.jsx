@@ -1,17 +1,9 @@
-import { Routes, Route } from "react-router-dom";
-import SignUp from "./Components/SignUp/SignUp";
-// import Login from "./Components/Login/Login";
-import Navbar from "./Components/Navbar/Navbar";
-
+import RootRouter from "./navigations/RootRouter";
 
 function App() {
   return (
     <>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<SignUp />} />
-        {/* <Route path="/login" element={<Login />} /> */}
-      </Routes>
+      <RootRouter />
     </>
   );
 }
