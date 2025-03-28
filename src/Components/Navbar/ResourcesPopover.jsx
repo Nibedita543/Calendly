@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Popover, Typography, Grid, Button } from "@mui/material";
 import { FaAngleDown } from "react-icons/fa";
+
 import "./Resource.css";
 
 const resourcesData = [
@@ -26,6 +27,7 @@ const resourcesData = [
   },
 
   {
+    title: " ",
     items: [
       {
         name: "About",
@@ -65,20 +67,15 @@ const resourcesData = [
     ],
   },
 ];
-
 const ResourcesPopover = () => {
   const [popoverAnchorEl, setPopoverAnchorEl] = useState(null);
-
   const handlePopoverOpen = (event) => {
     setPopoverAnchorEl(event.currentTarget);
   };
-
   const handlePopoverClose = () => {
     setPopoverAnchorEl(null);
   };
-
   const popoverOpen = Boolean(popoverAnchorEl);
-
   return (
     <div
       className="menu-item"
@@ -93,12 +90,13 @@ const ResourcesPopover = () => {
         sx={{
           pointerEvents: "auto",
           "& .MuiPaper-root": {
-            width: "1500px",
-            padding: "20px",
-            borderRadius: "10px",
+            width: "1300px",
+            height: "500px",
+            borderRadius: "8px",
             mt: 3,
-            mr: 25,
+            mr: 0,
           },
+          padding: "20px",
         }}
         open={popoverOpen}
         anchorEl={popoverAnchorEl}
@@ -109,16 +107,35 @@ const ResourcesPopover = () => {
       >
         <Grid container spacing={4} className="popover-content">
           {resourcesData.map((section, index) => (
-            <Grid item xs={4} key={index}>
-              <Typography variant="subtitle2" className="section-title">
-                {section.title}
+            <Grid
+              item
+              xs={4}
+              key={index}
+              sx={{
+                mt: index === 1 ? 5 : 0,
+              }}
+            >
+              <Typography
+                variant="subtitle2"
+                className="section-title"
+                sx={{
+                  mb: 4,
+                }}
+              >
+                {section?.title || " "}
               </Typography>
               {section.items.map((item, idx) => (
-                <div key={idx} className={`resource-item `}>
+                <div key={idx} className="resource-item">
                   <Typography variant="body1" className="resource-name">
                     {item.name}
                   </Typography>
-                  <Typography variant="body2" className="resource-desc">
+                  <Typography
+                    variant="body2"
+                    className="resource-desc"
+                    sx={{
+                      color: "rgb(100, 100, 100)", // Optional: Change color for better distinction
+                    }}
+                  >
                     {item.description}
                   </Typography>
                 </div>
@@ -127,7 +144,7 @@ const ResourcesPopover = () => {
           ))}
           <Grid item xs={4} className="promo-section">
             <img
-              src="https://images.ctfassets.net/k0lk9kiuza3o/1E5c2WIS…024_State_of_Meetings_report__1_.png?q=85&fm=webp"
+              src="https://images.ctfassets.net/k0lk9kiuza3o/1E5c2WISlq38gR8yrUmxVb/fb06130b9b4a3d67fa98853961217b51/2024_State_of_Meetings_report__1_.png?q=85&fm=webp"
               alt="Report"
               className="promo-image"
             />
