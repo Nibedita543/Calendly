@@ -31,7 +31,7 @@ export default function SignUpRIght() {
   ];
 
   return (
-    <Container maxWidth="md">
+    <Container>
       <Typography gutterBottom id="signupright-heading">
         Create your free account
       </Typography>

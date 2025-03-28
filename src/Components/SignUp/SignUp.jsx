@@ -13,7 +13,7 @@ import "./SIgnUp.css";
 
 function Signup() {
   return (
-    <Container maxWidth="sm">
+    <Container maxWidth="lg">
       <Paper
         elevation={3}
         sx={{
@@ -74,10 +74,11 @@ function Signup() {
             marginTop: 2,
             boxShadow: "none",
             flexDirection: { xs: "column", sm: "row" },
+            width: "100%",
           }}
         >
           <Button
-            variant="contained"
+            // variant="text"
             sx={{
               backgroundColor: "rgb(0, 107, 255)",
               color: "white",
@@ -87,13 +88,12 @@ function Signup() {
               display: "flex",
               alignItems: "center",
               gap: 1.5,
-              width: { xs: "100%", sm: "auto" },
+              // width: { xs: "100%" },
               "&:hover": { backgroundColor: "rgb(21, 85, 174)" },
             }}
           >
             <img
-              src="https://calendly.com/media/googleLogo.svg
-"
+              src="https://calendly.com/media/googleLogo.svg"
               alt="Google logo"
               width="26"
               height="26"
@@ -113,7 +113,7 @@ function Signup() {
               display: "flex",
               alignItems: "center",
               gap: 1.5,
-              width: { xs: "100%", sm: "auto" },
+              // width: { xs: "100%" },
               "&:hover": { backgroundColor: "#233B67" },
             }}
           >

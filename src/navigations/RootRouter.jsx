@@ -10,19 +10,19 @@ export default function RootRouter() {
   return (
     <>
       <Navbar />
-      <Container
-        maxWidth="lg"
-        sx={{
-          minHeight: "100vh",
-          mt: 10,
+      <div
+        style={{
+          marginTop: "200px",
         }}
       >
         <Routes>
           <Route path="/" element={<SignUpPage />} />
           <Route path="/login" element={<Login />} />
         </Routes>
-      </Container>
-      <Footer />
+      </div>
+      <div style={{marginTop:"150px"}}>
+        <Footer />
+      </div>
     </>
   );
 }
