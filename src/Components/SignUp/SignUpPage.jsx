@@ -1,27 +1,22 @@
-import React from 'react'
-import '../SignUp/SignUp'
-import '../SignUp/SignUpRIght'
-import { Container, Grid } from '@mui/material';
-import Signup from '../SignUp/SignUp';
-import SignUpRIght from '../SignUp/SignUpRIght';
+import React from "react";
+import "../SignUp/SignUp";
+import "../SignUp/SignUpRIght";
+import { Container } from "@mui/material";
+import Grid from "@mui/material/Grid2";
+import Signup from "../SignUp/SignUp";
+import SignUpRIght from "../SignUp/SignUpRIght";
 
 export default function SignUpPage() {
   return (
     <Container maxWidth="lg">
-      <Grid
-        container
-        spacing={4}
-        justifyContent="center"
-        alignItems="center"
-        sx={{ minHeight: "100vh" }} // Full height
-      >
+      <Grid container spacing={2} columns={12} justifyContent={"center"}>
         {/* Left Side: Signup Form */}
-        <Grid item xs={12} sm={6}>
+        <Grid size={6}>
           <Signup />
         </Grid>
 
         {/* Right Side: Additional Info */}
-        <Grid item xs={12} sm={6}>
+        <Grid size={6} mt="50px">
           <SignUpRIght />
         </Grid>
       </Grid>

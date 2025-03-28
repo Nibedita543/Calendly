@@ -8,14 +8,18 @@ export default function RootRouter() {
   return (
     <div>
       <Navbar />
-      <div style={{
-        marginTop:"100px"
-      }}>
+      <div
+        style={{
+          marginTop: "200px",
+        }}
+      >
         <Routes>
           <Route path="/" element={<SignUpPage />} />
         </Routes>
       </div>
-      <Footer/>
+      <div style={{marginTop:"150px"}}>
+        <Footer />
+      </div>
     </div>
   );
 }

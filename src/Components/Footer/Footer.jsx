@@ -183,12 +183,35 @@ export default function Footer() {
                   fontWeight="400"
                   display="block"
                   lineHeight="30px"
-                  
-                  sx={{"&hover":{textDecoration:"underline"},}}
+                  sx={{ "&:hover": { textDecoration: "underline" } }}
                 >
                   {text}
                 </Link>
               ))}
+              {section.careers && (
+                <Box display="flex" alignItems="center" mt={1}>
+                  <Link
+                    href="#"
+                    underline="none"
+                    color="#0B3558"
+                    fontWeight="400"
+                    lineHeight="30px"
+                    sx={{ "&hover": { textDecoration: "underline" } }}
+                  >
+                    {section.careers.text}
+                  </Link>
+                  <Chip
+                    label={section.careers.badge}
+                    sx={{
+                      ml: 1,
+                      backgroundColor: "#E6F0FF",
+                      color: "#0B3558",
+                      fontSize: "11px",
+                      height: "20px",
+                    }}
+                  />
+                </Box>
+              )}
             </Grid>
           ))}
         </Grid>
