@@ -9,7 +9,6 @@
   font-weight: 500;
   color: #0056d2;
 }
-
 .menu-link {
   display: inline-flex !important;
   -webkit-box-pack: center !important;
@@ -25,70 +24,82 @@
   transition: 0.2s linear !important;
 }
 
-
-
 .popover-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between; /* Distributes columns evenly */
-  flex-wrap: nowrap; /* Prevents wrapping to the next row */
-  width: 100%;
-  height: 500px;
-  padding-top: 30px;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important; /* Distributes columns evenly */
+  flex-wrap: nowrap !important; /* Prevents wrapping to the next row */
+  width: 100% !important;
+  height: 100% !important;
+  background-color: yellowgreen !important;
 }
 
 .popover-content .MuiGrid-item {
   flex: 1; /* Ensures equal width for all sections */
   min-width: 0; /* Prevents content from overflowing */
   text-align: left;
-
-  height: 100%;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  height: 500px !important;
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1);
+  background-color: pink;
 }
 
 .section-title {
-  font-size: 14px;
-  font-weight: 700;
-  color: #a0aec0;
-  text-transform: uppercase;
-  margin-bottom: 10px;
+  font-size: 1rem !important;
+  line-height: 1.2 !important;
+  font-weight: 600 !important;
+  letter-spacing: 1.25px !important;
+  text-transform: uppercase !important;
+  text-align: left !important;
+  color: rgb(166, 187, 209) !important;
+  /* font-family: __gilroy_2ec981 !important; */
 }
 
 .resource-item {
-  margin-bottom: 15px;
-  background: #eb4545;
+  margin-bottom: 15px !important;
+  display: flex !important;
+  gap: 4px !important;
+  flex-direction: column !important;
 }
 
 .resource-name {
-  font-size: 16px;
-  font-weight: 600;
-  color: #1a202c;
+  margin-bottom: 8px !important;
+  font-size: 1rem !important;
+  line-height: 1.6 !important;
+  width: fit-content !important;
+  text-align: left !important;
+  color: rgb(11, 53, 88) !important;
+  font-weight: 600 !important;
 }
 
 .resource-desc {
-  font-size: 14px;
-  color: yellow;
+  max-width: 250px !important;
+  text-align: left !important;
+  color: rgb(71, 103, 136) !important;
+  font-size: 0.875rem !important;
+  line-height: 1.4 !important;
+  font-weight: 400 !important;
 }
 
 .promo-section {
   text-align: center;
   padding: 20px;
-  background: #2b6ccd;
   border-radius: 10px;
 }
 
 .promo-image {
   display: block; /* Ensures the image is visible */
-  max-width: 100%; /* Ensures responsiveness */
+  width: 270px; /* Ensures responsiveness */
   height: auto; /* Keeps aspect ratio */
   border-radius: 8px;
+  margin-bottom: 8px;
 }
 
 .promo-title {
-  font-size: 18px;
-  font-weight: 700;
-  color: #1a202c;
-  margin-bottom: 5px;
+  color: rgb(11, 53, 88) !important;
+  font-size: 1rem !important;
+  line-height: 1.6 !important;
+  font-weight: 600 !important;
+  padding-top: 17px !important;
 }
 
 .promo-desc {
@@ -96,15 +107,28 @@
   color: #4a5568;
   margin-bottom: 10px;
 }
-
 .promo-btn {
-  background: #0056d2;
-  color: white;
-  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s linear, background-position 1ms, background-size 1ms;
+  color: rgb(255, 255, 255);
+  border: 1px solid rgb(0, 107, 255);
+  background-color: rgb(0, 107, 255);
+  padding: 8px 14px;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  position: relative;
+  height: fit-content;
+  flex-direction: row;
+  display: inline-flex;
+  opacity: 1;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 8px;
+  text-align: center;
+  font-family: __gilroy_2ec981, __gilroy_Fallback_2ec981;
   font-weight: 600;
-  padding: 10px 15px;
-  border-radius: 6px;
-  text-transform: none;
+  padding-top: 30px;
 }
 
 .promo-btn:hover {
