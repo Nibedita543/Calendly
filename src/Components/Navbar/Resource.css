@@ -24,11 +24,9 @@
   transition: 0.2s linear !important;
 }
 
+
 .popover-content {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: space-between !important; /* Distributes columns evenly */
-  flex-wrap: nowrap !important; /* Prevents wrapping to the next row */
+  flex-wrap: nowrap !important; 
   width: 100% !important;
   height: 100% !important;
   background-color: yellowgreen !important;
@@ -40,7 +38,7 @@
   text-align: left;
   height: 500px !important;
   box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.1);
-  background-color: pink;
+  /* background-color: pink; */
 }
 
 .section-title {
@@ -51,6 +49,7 @@
   text-transform: uppercase !important;
   text-align: left !important;
   color: rgb(166, 187, 209) !important;
+  padding-top: 50px;
   /* font-family: __gilroy_2ec981 !important; */
 }
 

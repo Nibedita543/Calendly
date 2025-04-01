@@ -25,9 +25,8 @@ const resourcesData = [
       },
     ],
   },
-
   {
-    title: " ",
+    title: "ABOUT",
     items: [
       {
         name: "About",
@@ -46,7 +45,6 @@ const resourcesData = [
       },
     ],
   },
-
   {
     title: "CONNECT",
     items: [
@@ -67,14 +65,11 @@ const resourcesData = [
     ],
   },
 ];
+
 const ResourcesPopover = () => {
   const [popoverAnchorEl, setPopoverAnchorEl] = useState(null);
-  const handlePopoverOpen = (event) => {
-    setPopoverAnchorEl(event.currentTarget);
-  };
-  const handlePopoverClose = () => {
-    setPopoverAnchorEl(null);
-  };
+  const handlePopoverOpen = (event) => setPopoverAnchorEl(event.currentTarget);
+  const handlePopoverClose = () => setPopoverAnchorEl(null);
   const popoverOpen = Boolean(popoverAnchorEl);
   return (
     <div
@@ -90,13 +85,19 @@ const ResourcesPopover = () => {
         sx={{
           pointerEvents: "auto",
           "& .MuiPaper-root": {
-            width: "1300px",
-            height: "500px",
-            borderRadius: "8px",
-            mt: 3,
-            mr: 0,
+            display: "flex",
+            justifyContent: "center",
+            width: "auto",
+            maxWidth: "1400px",
+            overflow: "hidden",
+            backgroundColor: "rgb(255, 255, 255)",
+            boxShadow:
+              "rgba(71, 103, 136, 0.04) 0px 4px 5px 0px, rgba(71, 103, 136, 0.03) 0px 4px 10px 0px, rgba(71, 103, 136, 0.05) 0px 10px 20px 0px",
+            borderRadius: "0px 0px 8px 8px",
+            padding: "20px",
+            mt: "23px",
+            mr:"90px"
           },
-          padding: "20px",
         }}
         open={popoverOpen}
         anchorEl={popoverAnchorEl}
@@ -105,24 +106,26 @@ const ResourcesPopover = () => {
         onClose={handlePopoverClose}
         disableRestoreFocus
       >
-        <Grid container spacing={4} className="popover-content">
+        <Grid container spacing={4}>
           {resourcesData.map((section, index) => (
             <Grid
               item
-              xs={4}
+              xs={3}
               key={index}
               sx={{
-                mt: index === 1 ? 5 : 0,
+                borderRight:
+                  index !== resourcesData.length - 1
+                    ? "1px solid #e0e0e0"
+                    : "none",
+                paddingRight: 3,
               }}
             >
               <Typography
                 variant="subtitle2"
                 className="section-title"
-                sx={{
-                  mb: 4,
-                }}
+                sx={{ mb: 4 }}
               >
-                {section?.title || " "}
+                {section.title}
               </Typography>
               {section.items.map((item, idx) => (
                 <div key={idx} className="resource-item">
@@ -132,9 +135,7 @@ const ResourcesPopover = () => {
                   <Typography
                     variant="body2"
                     className="resource-desc"
-                    sx={{
-                      color: "rgb(100, 100, 100)", // Optional: Change color for better distinction
-                    }}
+                    sx={{ color: "rgb(100, 100, 100)" }}
                   >
                     {item.description}
                   </Typography>
@@ -142,20 +143,42 @@ const ResourcesPopover = () => {
               ))}
             </Grid>
           ))}
-          <Grid item xs={4} className="promo-section">
+          <Grid
+            item
+            xs={3}
+            className="promo-section"
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "24px",
+              width: "fit-content",
+              padding: "32px",
+              backgroundColor: "rgb(244, 248, 255)",
+              borderLeft: "1px solid rgb(212, 224, 237)",
+              textAlign: "center",
+              borderRadius: "8px",
+            }}
+          >
             <img
               src="https://images.ctfassets.net/k0lk9kiuza3o/1E5c2WISlq38gR8yrUmxVb/fb06130b9b4a3d67fa98853961217b51/2024_State_of_Meetings_report__1_.png?q=85&fm=webp"
               alt="Report"
               className="promo-image"
+              style={{
+                width: "100%",
+                borderRadius: "8px",
+              }}
             />
             <Typography variant="h6" className="promo-title">
               The State of Meetings 2024
             </Typography>
-            <Typography variant="body2" className="promo-desc">
-              Calendy’s 2024 report explores the evolving nature of meetings.
-              Discover insights on productivity, engagement and efficiency
-              across roles, industries, regions, and other demographics, and
-              uncover strategies for improving meetings for everyone.
+            <Typography
+              variant="body2"
+              className="promo-desc"
+              sx={{ color: "gray" }}
+            >
+              Calendly’s 2024 report explores the evolving nature of meetings.
+              Discover insights on productivity, engagement, and efficiency
+              across roles, industries, and regions.
             </Typography>
             <Button variant="contained" className="promo-btn">
               Read the report →
