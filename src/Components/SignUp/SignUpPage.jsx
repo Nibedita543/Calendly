@@ -10,12 +10,10 @@ export default function SignUpPage() {
   return (
     <Container maxWidth="lg">
       <Grid container spacing={2} columns={12} justifyContent={"center"}>
-        {/* Left Side: Signup Form */}
         <Grid size={6}>
           <Signup />
         </Grid>
 
-        {/* Right Side: Additional Info */}
         <Grid size={6} mt="50px">
           <SignUpRIght />
         </Grid>

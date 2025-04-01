@@ -1,0 +1,63 @@
+/* 🌍 Language Dropdown Styles */
+.language-dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-btn {
+  display: flex !important;
+  align-items: center !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: rgb(71, 103, 136) !important;
+  background: none !important;
+  border: none;
+  cursor: pointer !important;
+  transition: 0.2s ease-in-out !important;
+  font-family: __gilroy_2ec981 !important;
+  text-transform: none !important;
+}
+
+/* 🌍 Dropdown Icon */
+.dropdown-icon {
+  margin-left: 5px;
+}
+
+/* 🌍 Dropdown Menu */
+.dropdown-menu {
+  position: absolute;
+  top: 48px;
+  right: 20px;
+  background: white;
+  border-radius: 5px;
+  width: 255px;
+  z-index: 999;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* 🌍 Language Button Inside Dropdown */
+.dropdown-menu button {
+  justify-content: space-between; /* Align text and checkmark */
+  color: rgb(71, 103, 136);
+  font-weight: 600;
+  padding: 16px;
+  height: 64px;
+  width: 100%;
+  text-align: left;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-menu button:hover {
+  background-color: rgb(240, 243, 248);
+}
+
+/* 🌍 Selected Language Styling */
+.dropdown-menu button.selected {
+  background-color: rgb(240, 243, 248);
+  font-weight: 700;
+}
