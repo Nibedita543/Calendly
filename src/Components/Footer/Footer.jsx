@@ -7,83 +7,22 @@ import {
   Chip,
   Link,
   Box,
+  Button,
+  Stack,
+  Divider,
 } from "@mui/material";
 import { MdArrowOutward } from "react-icons/md";
+import LanguageDropDown from "../LanguageDropDown/LanguageDropDown";
+import {
+  footerbtns,
+  FooterData,
+  footerIcons,
+  footerlinks,
+} from "../../constants/FooterData";
 
 export default function Footer() {
-    const footerData = [
-      {
-        title: "Features",
-        links: [
-          "Scheduling automation",
-          "Customizable availability",
-          "Mobile apps",
-          "Browser extensions",
-          "Meeting routing",
-          "Event Types",
-          "Email & website embeds",
-          "Reminders & follow-ups",
-          "Meeting polls",
-          "Analytics",
-          "Admin management",
-        ],
-      },
-      {
-        title: "Integrations",
-        links: [
-          "Google ecosystem",
-          "Microsoft ecosystem",
-          "Calendars",
-          "Video conferencing",
-          "Payments",
-          "Sales & CRM",
-          "Recruiting & ATS",
-          "Email messaging",
-          "Embed Calendly",
-          "Analytics",
-          "API & connectors",
-          "Security & compliance",
-        ],
-      },
-      {
-        title: "Calendly",
-        links: [
-          "Pricing",
-          "Product overview",
-          "Solutions",
-          "For individuals",
-          "For small businesses",
-          "For enterprise",
-          "Compare",
-          "Security",
-          "Sign up for free",
-          "Talk to sales",
-          "Get a demo",
-        ],
-      },
-      {
-        title: "Resources",
-        links: [
-          "Help center",
-          "Resource center",
-          "Blog",
-          "Customer stories",
-          "Calendly community",
-          "Developer tools",
-        ],
-      },
-      {
-        title: "Company",
-        links: [
-          "About us",
-          "Leadership",
-          "Newsroom",
-          "Become a partner",
-          "Contact us",
-        ],
-        careers: { text: "Careers", badge: "We're hiring!" }, // Special case for Careers with a badge
-      },
-    ];
+  // const [showDropdown, setShowDropdown] = useState(false);
+
   return (
     <Container>
       <Grid container spacing={3} alignItems="center">
@@ -165,55 +104,158 @@ export default function Footer() {
           </Paper>
         </Grid>
       </Grid>
-      <Grid></Grid>
       <Box sx={{ py: 5 }}>
         <Grid container spacing={4} justifyContent="space-between">
-          {footerData.map((section, index) => (
+          {FooterData.map((section, index) => (
             <Grid item xs={12} sm={6} md={2.4} key={index}>
               <Typography gutterBottom color="#0B3558" fontWeight="600">
                 {" "}
                 {section.title}
               </Typography>
-              {section.links.map((text, linkIndex) => (
-                <Link
-                  key={linkIndex}
-                  href="#"
-                  underline="none"
-                  color="#0B3558"
-                  fontWeight="400"
-                  display="block"
-                  lineHeight="30px"
-                  sx={{ "&:hover": { textDecoration: "underline" } }}
-                >
-                  {text}
-                </Link>
-              ))}
-              {section.careers && (
-                <Box display="flex" alignItems="center" mt={1}>
-                  <Link
-                    href="#"
-                    underline="none"
-                    color="#0B3558"
-                    fontWeight="400"
-                    lineHeight="30px"
-                    sx={{ "&hover": { textDecoration: "underline" } }}
-                  >
-                    {section.careers.text}
-                  </Link>
-                  <Chip
-                    label={section.careers.badge}
-                    sx={{
-                      ml: 1,
-                      backgroundColor: "#E6F0FF",
-                      color: "#0B3558",
-                      fontSize: "11px",
-                      height: "20px",
-                    }}
-                  />
-                </Box>
-              )}
+              {section.links.map((text, linkIndex) => {
+                return (
+                  <>
+                    {text === "Career" ? (
+                      <Box display="flex" alignItems="center" mt={1}>
+                        <Link
+                          href="#"
+                          underline="none"
+                          color="#0B3558"
+                          fontWeight="400"
+                          sx={{ "&:hover": { textDecoration: "underline" } }}
+                        >
+                          {section.careers.text}
+                        </Link>
+                        <Chip
+                          label={section.careers.badge}
+                          sx={{
+                            ml: 1,
+                            backgroundColor: "#E6F0FF",
+                            color: "#0B3558",
+                            fontSize: "11px",
+                            height: "20px",
+                          }}
+                        />
+                      </Box>
+                    ) : (
+                      <Link
+                        key={linkIndex}
+                        href="#"
+                        underline="none"
+                        color="#0B3558"
+                        fontWeight="400"
+                        display="block"
+                        lineHeight="30px"
+                        sx={{ "&:hover": { textDecoration: "underline" } }}
+                      >
+                        {text}
+                      </Link>
+                    )}
+                  </>
+                );
+              })}
             </Grid>
           ))}
+        </Grid>
+        <Typography gutterBottom variant="h6" fontWeight="600" mt="50px">
+          Downloads
+        </Typography>
+        <Box display="flex" justifyContent="space-between">
+          <Box
+            display="flex"
+            flexWrap="wrap"
+            gap={2}
+            mt={3}
+            sx={{ maxWidth: "600px" }}
+          >
+            {footerbtns.map((footerbtns, index) => (
+              <Button
+                key={index}
+                sx={{
+                  backgroundColor: footerbtns.bgColor,
+                  color: "#0B3558",
+                  textTransform: "none",
+                  borderRadius: "8px",
+                  fontWeight: 500,
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 1,
+                  padding: "5px 10px",
+                  "&:hover": { backgroundColor: "#E6F0FF", color: "#476788" },
+                }}
+                // startIcon={footerbtns.icon}
+                startIcon={
+                  <div>
+                    <img
+                      src={footerbtns.icon}
+                      alt=""
+                      style={{
+                        width: "auto",
+                        height: "20px",
+                      }}
+                    />
+                  </div>
+                }
+              >
+                {footerbtns.label}
+              </Button>
+            ))}
+          </Box>
+          <Box display="flex" gap={3} sx={{ fontSize: "24px" }}>
+            {footerIcons.map((item, index) => (
+              <a
+                key={index}
+                href={item.link}
+                target="_blank"
+                rel="none"
+                style={{
+                  display: "flex",
+                  alignItems: "end",
+                }}
+              >
+                <Box
+                  sx={{
+                    color: "#0B3558",
+                    height: "24px",
+                    width: "24px",
+                    "&:hover": { color: "#476788" },
+                  }}
+                >
+                  {item.icons}
+                </Box>
+              </a>
+            ))}
+          </Box>
+        </Box>
+        <Divider sx={{ py: 2 }}></Divider>
+        <Grid container spacing={3}>
+          <Grid item xs>
+            <LanguageDropDown />
+          </Grid>
+          <Grid item xs={6} display="flex " gap={3}>
+            {footerlinks.map((link, index) => (
+              <a
+                key={index}
+                href={link.href}
+                style={{
+                  textDecoration: "none",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "5px",
+                  color: "#0B3558",
+                  cursor: "pointer",
+                }}
+              >
+                {link.img && <img src={link.img} alt="logo" width={30} />}
+                {link.text}
+              </a>
+            ))}
+          </Grid>
+          <Grid item xs>
+            <Typography mt={2} sx={{ color: "#0B3558", fontSize: "14px" }}>
+              Copyright Calendly 2025
+            </Typography>
+          </Grid>
         </Grid>
       </Box>
     </Container>
