@@ -24,11 +24,9 @@ import "./Navbar.css";
 const Navbar = () => {
   const [showDropdown, setShowDropdown] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
-
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
-
   const handleClose = () => {
     setAnchorEl(null);
   };
@@ -137,7 +135,7 @@ const Navbar = () => {
                 variant="text"
                 size="medium"
                 sx={{
-                  color: "rgb(1, 10, 17)",
+                  color: " rgb(11, 53, 88)",
                   fontWeight: "700",
                   textTransform: "none",
                   display: "flex",
