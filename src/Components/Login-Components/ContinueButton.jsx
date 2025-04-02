@@ -1,5 +1,5 @@
 import React from "react";
-import GlobalButton from "../../../Globaly-Components/GlobalButton/GlobalButton.jsx";
+import GlobalButton from "../../Globaly-Components/GlobalButton/GlobalButton.jsx";
 
 const GoogleButton = () => {
   return (

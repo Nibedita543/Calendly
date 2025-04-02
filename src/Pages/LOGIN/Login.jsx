@@ -1,11 +1,11 @@
 import { Container, Paper, Divider } from "@mui/material";
-import ChromeExtension from "./All-Logincompo/CromeExtention.jsx";
-import Header from "./All-Logincompo/Header.jsx";
-import CustomtextField from "./All-Logincompo/TextFeild.jsx";
-import ContinueButton from "./All-Logincompo/ContinueButton.jsx";
-import GoogleButton from "./All-Logincompo/GoogleButton.jsx";
-import MicroButton from "./All-Logincompo/MicroButtoon.jsx";
-import SignupHere from "./All-Logincompo/Signuphere.jsx";
+import ChromeExtension from "../../Components/Login-Components/CromeExtention.jsx";
+import Header from "../../Components/Login-Components/Header.jsx";
+import CustomtextField from "../../Components/Login-Components/TextFeild.jsx";
+import ContinueButton from "../../Components/Login-Components/ContinueButton.jsx";
+import GoogleButton from "../../Components/Login-Components/GoogleButton.jsx";
+import MicroButton from "../../Components/Login-Components/MicroButtoon.jsx";
+import SignupHere from "../../Components/Login-Components/Signuphere.jsx";
 import "./Login.css";
 function Login() {
   return (
@@ -16,7 +16,6 @@ function Login() {
         flexDirection: "column",
         alignItems: "center",
         mt: 5,
-        backgroundColor: "pink",
         "-webkit-box-align": "center",
         gap: "25px",
         width: "470px",

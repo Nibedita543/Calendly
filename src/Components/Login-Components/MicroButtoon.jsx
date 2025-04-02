@@ -1,13 +1,13 @@
 import React from "react";
- import GlobalButton from "../../../Globaly-Components/GlobalButton/GlobalButton.jsx";
-import GoogleIcon from "@mui/icons-material/Google"; // Assuming you're using MUI's Google Icon
+ import GlobalButton from "../../Globaly-Components/GlobalButton/GlobalButton.jsx";
+import MicrosoftIcon from "@mui/icons-material/Microsoft"; 
 
-const GoogleButton = () => {
+const MicroButton = () => {
   return (
     <GlobalButton
       fullWidth
       variant="outlined"
-      startIcon={<GoogleIcon />}
+      startIcon={<MicrosoftIcon />}
       sx={{
         cursor: "pointer",
         transition: "0.2s linear, background-position 1ms, background-size 1ms",
@@ -31,9 +31,9 @@ const GoogleButton = () => {
         textTransform: "none",
       }}
     >
-      Continue with Google
+      Continue with Microsoft
     </GlobalButton>
   );
 };
 
-export default GoogleButton;
+export default MicroButton;

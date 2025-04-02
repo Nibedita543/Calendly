@@ -1,10 +1,10 @@
 import React from "react";
-import "../SignUp/SignUp";
-import "../SignUp/SignUpRIght";
+import "../../Components/SignUp-Components/SignUp";
+import "../../Components/SignUp-Components/SignUpRIght";
 import { Container } from "@mui/material";
 import Grid from "@mui/material/Grid2";
-import Signup from "../SignUp/SignUp";
-import SignUpRIght from "../SignUp/SignUpRIght";
+import Signup from "../../Components/SignUp-Components/SignUp";
+import SignUpRIght from "../../Components/SignUp-Components/SignUpRIght";
 
 export default function SignUpPage() {
   return (
