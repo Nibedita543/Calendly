@@ -11,12 +11,13 @@ import { IoIosHelpCircleOutline, IoMdContacts } from "react-icons/io";
 import { PiShareNetworkBold } from "react-icons/pi";
 import { RiCalendar2Line } from "react-icons/ri";
 import { SiGoogleanalytics } from "react-icons/si";
+import { NAVIGATION_ROUTES } from "../../constants/NavigationRoutes";
 
 export const SidebarData = [
   {
     title: "Event Types",
     icon: <AiOutlineLink style={{ fontSize: "20px" }} />,
-    link: "/event-types",
+    link: NAVIGATION_ROUTES.EVENT_TYPES,
   },
   {
     title: "Meetings",
@@ -26,10 +27,12 @@ export const SidebarData = [
   {
     title: "Availability",
     icon: <HiOutlineClock style={{ fontSize: "20px" }} />,
-    link: "/availability"
+    link: NAVIGATION_ROUTES.AVAILABILITY_SCHEDULES,
   },
-  { title: "Contacts", icon: <IoMdContacts style={{ fontSize: "20px" }} />,
-     link: "/contacts" 
+  {
+    title: "Contacts",
+    icon: <IoMdContacts style={{ fontSize: "20px" }} />,
+    link: "/contacts",
   },
   {
     title: "Workflow",
@@ -41,24 +44,27 @@ export const SidebarData = [
     icon: <GrAppsRounded style={{ fontSize: "20px" }} />,
     link: "/integration&apps",
   },
-  { title: "Routing", icon: <CiRoute style={{ fontSize: "20px" }} />, 
+  {
+    title: "Routing",
+    icon: <CiRoute style={{ fontSize: "20px" }} />,
     link: "/routing",
   },
   {
     title: "Upgrade plan",
-    icon: 
-      <AiOutlineDollarCircle style={{ color: "#0069FF", fontSize: "20px" }} />,
-      link: "/upgradeplan"
+    icon: (
+      <AiOutlineDollarCircle style={{ color: "#0069FF", fontSize: "20px" }} />
+    ),
+    link: "/upgradeplan",
   },
   {
     title: "Analytics",
     icon: <SiGoogleanalytics style={{ fontSize: "20px" }} />,
-    link:"/analytics"
+    link: "/analytics",
   },
   {
     title: "Admin center",
     icon: <AiOutlineCrown style={{ fontSize: "20px" }} />,
-    link: "/admincenter"
+    link: "/admincenter",
   },
   // {
   //   title: "Help",
