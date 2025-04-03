@@ -24,7 +24,7 @@ export default function DashNavbar() {
           display: "flex",
           justifyContent: "end",
           alignItems: "center",
-          width: "85%",
+          width: "95%",
           height: "50%",
           padding: "12px 0",
           background:
