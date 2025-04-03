@@ -10,13 +10,11 @@ export default function CreateButton({ isCollapsed, toggleCollpase }) {
         maxWidth: "100%",
         mb: 3,
         mt: 3,
-        borderRadius: "28px",
-        padding: isCollapsed ? "6px" : "8px 16px",
+        borderRadius: "28px", 
+        padding: "8px 16px",
         fontWeight: "400",
         textTransform: "none",
-        height: isCollapsed ? "40px" : "500px",
-        width: isCollapsed ? "50px" : "100%",
-        minWidth: isCollapsed ? "50px" : "auto",
+        
         border: "2px solid #7EA5DC",
         "&:hover": { backgroundColor: "#E6F0FF" },
       }}
