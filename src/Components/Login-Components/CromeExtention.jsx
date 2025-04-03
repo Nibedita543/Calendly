@@ -1,7 +1,7 @@
 import React from "react";
 import { Box } from "@mui/material";
- import GlobalButton from "../../../Globaly-Components/GlobalButton/GlobalButton.jsx";
-import GlobalImage from "../../../Globaly-Components/GlobalImage/GlobalImage.jsx";
+ import GlobalButton from "../../Globaly-Components/GlobalButton/GlobalButton.jsx";
+import GlobalImage from "../../Globaly-Components/GlobalImage/GlobalImage.jsx";
 const ChromeExtension = () => {
   return (
     <Box
