@@ -4,6 +4,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import LogoofCalendly from "./LogoofCalendly/LogoofCalendly";
 import CreateButton from "./CreateButton/CreateButton";
 import SideBarMenu from "./SideBarMenu/SideBarMenu";
+import ToggledCreateButton from "./CreateButton/ToggledCreateButton";
 
 export default function Sidebar({ isCollapsed, setIsCollapsed }) {
   const toggleCollapse = () => setIsCollapsed((prev) => !prev);
@@ -29,7 +30,7 @@ export default function Sidebar({ isCollapsed, setIsCollapsed }) {
         <MenuIcon />
       </IconButton> */}
       <LogoofCalendly isCollapsed={isCollapsed} handleToggle={toggleCollapse} />
-      {!isCollapsed && <CreateButton />}
+      {isCollapsed ? <ToggledCreateButton /> : <CreateButton />}
       <SideBarMenu isCollapsed={isCollapsed} />
     </Drawer>
   );
