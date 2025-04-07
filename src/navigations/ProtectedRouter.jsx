@@ -1,9 +1,11 @@
 import React from "react";
-import { Outlet, Route, Routes } from "react-router-dom";
+import { Navigate, Outlet, Route, Routes } from "react-router-dom";
 import Sidebar from "../Components/Sidebar/Sidebar";
 import DashNavbar from "../Components/Dashboard-Components/EventTypes-Components/Dashnavbar.jsx";
 import Dashboard from "../Pages/DASHBOARD/Dashboard";
 import { Box } from "@mui/material";
+import Meeting from "../../src/Components/Dashboard-Components/Meeting";
+import Contacts from "../Components/Dashboard-Components/Contacts";
 import Availability from "../Components/Dashboard-Components/Availability.jsx";
 import { NAVIGATION_ROUTES } from "../constants/NavigationRoutes.js";
 import AvailabilityLayout from "../Components/Dashboard-Components/Availability.jsx";
@@ -12,6 +14,7 @@ import Holidays from "../Components/Dashboard-Components/Availability-Component/
 import Settings from "../Components/Dashboard-Components/Availability-Component/Settings.jsx";
 import Workflow from "../Components/Dashboard-Components/Workflow.jsx";
 import Routing from "../Components/Dashboard-Components/Routing.jsx";
+import IntegrationApp from "../Components/Dashboard-Components/IntegrationApp.jsx";
 
 export default function ProtectedRouter() {
   const [isCollapsed, setIsCollapsed] = React.useState(false);
@@ -35,9 +38,20 @@ export default function ProtectedRouter() {
         <Box sx={{}}>
           <Routes>
             <Route
+              path={"/"}
+              element={<Navigate to={NAVIGATION_ROUTES.EVENT_TYPES} />}
+            />
+            <Route
               path={NAVIGATION_ROUTES.EVENT_TYPES}
               element={<Dashboard />}
             />
+            <Route path={NAVIGATION_ROUTES.MEETING} element={<Meeting />} />
+            <Route path={NAVIGATION_ROUTES.CONTACTS} element={<Contacts />} />
+            <Route
+              path={NAVIGATION_ROUTES.INTEGRATION_AND_APPS}
+              element={<IntegrationApp />}
+            />
+
             <Route path="/" element={<AvailabilityLayout />}>
               <Route path={"availability/schedules"} element={<Schedules />} />
               <Route
