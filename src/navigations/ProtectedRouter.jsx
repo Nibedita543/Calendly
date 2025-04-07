@@ -9,6 +9,9 @@ import { NAVIGATION_ROUTES } from "../constants/NavigationRoutes.js";
 import AvailabilityLayout from "../Components/Dashboard-Components/Availability.jsx";
 import Schedules from "../Components/Dashboard-Components/Availability-Component/Schedules.jsx";
 import Holidays from "../Components/Dashboard-Components/Availability-Component/Holidays.jsx";
+import Settings from "../Components/Dashboard-Components/Availability-Component/Settings.jsx";
+import Workflow from "../Components/Dashboard-Components/Workflow.jsx";
+import Routing from "../Components/Dashboard-Components/Routing.jsx";
 
 export default function ProtectedRouter() {
   const [isCollapsed, setIsCollapsed] = React.useState(false);
@@ -45,9 +48,17 @@ export default function ProtectedRouter() {
                   </>
                 }
               />
-              <Route path={"availability/settings"} element={<></>} />
+              <Route
+                path={"availability/settings"}
+                element={
+                  <>
+                    <Settings />
+                  </>
+                }
+              />
             </Route>
-            {/* <Route path="/meeting" element={<Dashboard />} /> */}
+            <Route path={NAVIGATION_ROUTES.WORKFLOW} element={<Workflow />} />
+            <Route path={NAVIGATION_ROUTES.ROUTING} element={<Routing />} />
           </Routes>
         </Box>
       </Box>

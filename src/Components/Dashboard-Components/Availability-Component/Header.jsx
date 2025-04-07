@@ -1,9 +1,9 @@
 import React from "react";
 import GlobalText from "../../../Globaly-Components/GlobalTypography/GlobalTypography.jsx";
 
-const Header = () => {
+const Header = ({ title }) => {
   return (
-    <header style={{ padding: "10px",marginLeft:"10px" }}>
+    <header style={{ padding: "5px" }}>
       <GlobalText
         variant="h5"
         fontWeight="bold"
@@ -16,7 +16,7 @@ const Header = () => {
           color: "#0A2540",
         }}
       >
-        Availability
+        {title}
       </GlobalText>
     </header>
   );
