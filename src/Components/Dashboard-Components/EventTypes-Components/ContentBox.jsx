@@ -16,13 +16,13 @@ import LaunchIcon from "@mui/icons-material/Launch";
 
 const MuiUiClone = () => {
   return (
-    <Box sx={{ backgroundColor: "#f5f5f5", height: "100vh", width: "81%" }}>
+    <Box sx={{ backgroundColor: "#f5f5f5", height: "100vh", width: "95%" }}>
       <Typography
         variant="h5"
         fontWeight="bold"
         gutterBottom
         sx={{
-          color: "currentColor",
+          color: "#0A2540",
           fontSize: "var(--fontSizeHeadline2, 28px)",
           margin: 0,
           fontWeight: "var(--fontWeightBold, 700)",
@@ -35,11 +35,11 @@ const MuiUiClone = () => {
       <Card
         sx={{
           display: "flex",
+          justifyContent: "center",
           alignItems: "center",
           p: 2,
           mb: 4,
           mt: 4,
-          borderBottom: "0.5px solid #d4e0ed ",
           backgroundColor: "#f5f5f5",
         }}
       >
