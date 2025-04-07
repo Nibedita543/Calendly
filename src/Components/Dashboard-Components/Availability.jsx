@@ -23,9 +23,9 @@ const AvailabilityLayout = () => {
     navigate(newValue);
   };
   return (
-    <section style={{ padding: "20px" }}>
-      <Header />
-      <Box sx={{ width: "100%", p: 3 }}>
+    <section style={{ padding: "10px", paddingLeft: "25px" }}>
+      <Header title={"Availability"} />
+      <Box sx={{ width: "100%", height: "100%" }}>
         <Tabs
           value={value}
           onChange={handleChange}

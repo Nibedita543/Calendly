@@ -13,11 +13,12 @@ import SettingsIcon from "@mui/icons-material/Settings";
 import LinkIcon from "@mui/icons-material/Link";
 import { BiPlus } from "react-icons/bi";
 import LaunchIcon from "@mui/icons-material/Launch";
+import Header from "../Availability-Component/Header";
 
 const MuiUiClone = () => {
   return (
     <Box sx={{ backgroundColor: "#f5f5f5", height: "100vh", width: "95%" }}>
-      <Typography
+      {/* <Typography
         variant="h5"
         fontWeight="bold"
         gutterBottom
@@ -30,8 +31,8 @@ const MuiUiClone = () => {
         }}
       >
         Event types
-      </Typography>
-
+      </Typography> */}
+      <Header title={"Event types"} />
       <Card
         sx={{
           display: "flex",

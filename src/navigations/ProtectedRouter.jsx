@@ -1,5 +1,5 @@
 import React from "react";
-import { Outlet, Route, Routes } from "react-router-dom";
+import { Navigate, Outlet, Route, Routes } from "react-router-dom";
 import Sidebar from "../Components/Sidebar/Sidebar";
 import DashNavbar from "../Components/Dashboard-Components/EventTypes-Components/Dashnavbar.jsx";
 import Dashboard from "../Pages/DASHBOARD/Dashboard";
@@ -11,6 +11,9 @@ import { NAVIGATION_ROUTES } from "../constants/NavigationRoutes.js";
 import AvailabilityLayout from "../Components/Dashboard-Components/Availability.jsx";
 import Schedules from "../Components/Dashboard-Components/Availability-Component/Schedules.jsx";
 import Holidays from "../Components/Dashboard-Components/Availability-Component/Holidays.jsx";
+import Settings from "../Components/Dashboard-Components/Availability-Component/Settings.jsx";
+import Workflow from "../Components/Dashboard-Components/Workflow.jsx";
+import Routing from "../Components/Dashboard-Components/Routing.jsx";
 import IntegrationApp from "../Components/Dashboard-Components/IntegrationApp.jsx";
 
 export default function ProtectedRouter() {
@@ -35,16 +38,20 @@ export default function ProtectedRouter() {
         <Box sx={{}}>
           <Routes>
             <Route
+              path={"/"}
+              element={<Navigate to={NAVIGATION_ROUTES.EVENT_TYPES} />}
+            />
+            <Route
               path={NAVIGATION_ROUTES.EVENT_TYPES}
               element={<Dashboard />}
             />
             <Route path={NAVIGATION_ROUTES.MEETING} element={<Meeting />} />
             <Route path={NAVIGATION_ROUTES.CONTACTS} element={<Contacts />} />
-            <Route path={NAVIGATION_ROUTES.INTEGRATION_AND_APPS} element={<IntegrationApp/>}/>
             <Route
-              path={NAVIGATION_ROUTES.EVENT_TYPES}
-              element={<Dashboard />}
+              path={NAVIGATION_ROUTES.INTEGRATION_AND_APPS}
+              element={<IntegrationApp />}
             />
+
             <Route path="/" element={<AvailabilityLayout />}>
               <Route path={"availability/schedules"} element={<Schedules />} />
               <Route
@@ -55,9 +62,17 @@ export default function ProtectedRouter() {
                   </>
                 }
               />
-              <Route path={"availability/settings"} element={<></>} />
+              <Route
+                path={"availability/settings"}
+                element={
+                  <>
+                    <Settings />
+                  </>
+                }
+              />
             </Route>
-            {/* <Route path="/meeting" element={<Dashboard />} /> */}
+            <Route path={NAVIGATION_ROUTES.WORKFLOW} element={<Workflow />} />
+            <Route path={NAVIGATION_ROUTES.ROUTING} element={<Routing />} />
           </Routes>
         </Box>
       </Box>
