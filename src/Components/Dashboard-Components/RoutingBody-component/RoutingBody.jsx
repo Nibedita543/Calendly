@@ -2,8 +2,8 @@ import React from "react";
 import { Box, Typography, Link, Button, Stack } from "@mui/material";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import AddIcon from "@mui/icons-material/Add";
-import Header from "../Availability-Component/Header.jsx";
-import UpgradeBanner from "../Banner.jsx";
+import Header from "../../Main-Components/Header.jsx";
+import UpgradeBanner from "../../Main-Components/Banner.jsx";
 
 function RoutingBody({ children }) {
   return (

@@ -2,7 +2,6 @@ import React from "react";
 import {
   Box,
   Card,
-  CardContent,
   Typography,
   Button,
   IconButton,
@@ -10,28 +9,14 @@ import {
   Checkbox,
 } from "@mui/material";
 import SettingsIcon from "@mui/icons-material/Settings";
-import LinkIcon from "@mui/icons-material/Link";
 import { BiPlus } from "react-icons/bi";
 import LaunchIcon from "@mui/icons-material/Launch";
-import Header from "../Availability-Component/Header";
+import Header from "../../Main-Components/Header.jsx";
+
 
 const MuiUiClone = () => {
   return (
     <Box sx={{ backgroundColor: "#f5f5f5", height: "100vh", width: "95%" }}>
-      {/* <Typography
-        variant="h5"
-        fontWeight="bold"
-        gutterBottom
-        sx={{
-          color: "#0A2540",
-          fontSize: "var(--fontSizeHeadline2, 28px)",
-          margin: 0,
-          fontWeight: "var(--fontWeightBold, 700)",
-          lineHeight: "var(--lineHeightStandard, 1.4)",
-        }}
-      >
-        Event types
-      </Typography> */}
       <Header title={"Event types"} />
       <Card
         sx={{
@@ -110,7 +95,6 @@ const MuiUiClone = () => {
           New Event Type
         </Button>
       </Card>
-
       <Card
         sx={{
           display: "flex",

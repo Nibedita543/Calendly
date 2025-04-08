@@ -3,11 +3,8 @@ import { Box, Button, Chip, Paper, Tab } from "@mui/material";
 import { TabContext, TabList, TabPanel } from "@mui/lab";
 import { IoDownloadOutline, IoFilterOutline } from "react-icons/io5";
 import {  ArrowDropDownCircleOutlined } from "@mui/icons-material";
-import UpcommingTab from "./UpcommingTab";
-import PendingTab from "./PendingTab";
-import PastTab from "./PastTab";
-import DateRange from "./DateRange";
 import { FaCaretDown } from "react-icons/fa";
+import NoDataMessage from "../../Main-Components/NoDataMessage";
 
 export default function MeetingTabs() {
   const [value, setValue] = useState("1");
@@ -42,16 +39,19 @@ export default function MeetingTabs() {
           </TabList>
         </Box>
         <TabPanel value="1">
-          <UpcommingTab />
+          <NoDataMessage title="No Upcoming Events" />
         </TabPanel>
+
         <TabPanel value="2">
-          <PendingTab />
+          <NoDataMessage title="No Pending Events" />
         </TabPanel>
+
         <TabPanel value="3">
-          <PastTab />
+          <NoDataMessage title="No Past Events" />
         </TabPanel>
-        <TabPanel value="3">
-          <DateRange />
+
+        <TabPanel value="4">
+          <NoDataMessage title="No Events in Date Range" />
         </TabPanel>
       </TabContext>
     </Paper>

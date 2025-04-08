@@ -1,13 +1,13 @@
 import { Box, Tab } from '@mui/material'
 import React from 'react'
-import MeetingHeader from './MeetingComponents/MeetingHeader'
-import DropdownTextBox from './MeetingComponents/DropdownTextBox'
+import Header from '../Main-Components/Header'
+import DropdownTextBox from '../Main-Components/DropdownTextBox'
 import MeetingTabs from './MeetingComponents/MeetingTabs'
 
 export default function Meeting() {
   return (
     <Box>
-        <MeetingHeader/>
+      <Header title={"Meeting"} />
         <DropdownTextBox/>
         <MeetingTabs/>
     </Box>

@@ -8,15 +8,13 @@ import {
   Switch,
   IconButton,
 } from "@mui/material";
-import AddIcon from "@mui/icons-material/Add";
 import ControlPointIcon from "@mui/icons-material/ControlPoint";
 import DeleteIcon from "@mui/icons-material/Close";
-import Touggle from "./Tougle.jsx";
+import Touggle from "../../Main-Components/Tougle.jsx";
 import EventIcon from "@mui/icons-material/Event";
 import { BiPlus } from "react-icons/bi";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import { NAVIGATION_ROUTES } from "../../../constants/NavigationRoutes.js";
-import { useNavigate, useNavigation } from "react-router-dom";
+
 
 export default function Content() {
   const [weeklyHours, setWeeklyHours] = useState({

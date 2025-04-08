@@ -3,16 +3,16 @@ import * as MuiIcons from "@mui/icons-material"; // Import all Material UI icons
 import { Box, Tooltip } from "@mui/material";
 
 const GlobalIcon = ({
-  name = "HelpOutline", // Default icon if name is incorrect
-  size = "24px", // Default size
-  color = "inherit", // Default color
-  tooltip = "", // Tooltip text (optional)
-  onClick = null, // Click handler
-  sx = {}, // Custom styles
-  tabIndex = 0, // Keyboard navigation support
-  ariaLabel = "", // Accessibility label
-  role = "img", // ARIA role
-  ...props // Additional props
+  name = "HelpOutline",
+  size = "24px",
+  color = "inherit",
+  tooltip = "",
+  onClick = null,
+  sx = {},
+  tabIndex = 0,
+  ariaLabel = "",
+  role = "img",
+  ...props
 }) => {
   const IconComponent = MuiIcons[name] || MuiIcons.HelpOutline;
 
@@ -24,13 +24,13 @@ const GlobalIcon = ({
         color: color,
         cursor: onClick ? "pointer" : "default",
         transition: "0.3s ease-in-out",
-        "&:hover": onClick ? { opacity: 0.7, transform: "scale(1.1)" } : {}, // Hover effect
-        "&:focus": { outline: "2px solid #1976d2" }, // Focus styling
+        "&:hover": onClick ? { opacity: 0.7, transform: "scale(1.1)" } : {},
+        "&:focus": { outline: "2px solid #1976d2" },
         ...sx,
       }}
       onClick={onClick}
       tabIndex={tabIndex}
-      aria-label={ariaLabel || name} // Default to icon name if ariaLabel not provided
+      aria-label={ariaLabel || name}
       role={role}
       {...props}
     />

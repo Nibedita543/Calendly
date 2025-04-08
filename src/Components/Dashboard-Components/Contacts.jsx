@@ -1,15 +1,17 @@
 import { Box, Button, Typography } from '@mui/material'
 import React from 'react'
-import MeetingHeader from './MeetingComponents/MeetingHeader';
+
 import { VscQuestion } from 'react-icons/vsc';
 import { Link } from 'react-router-dom';
 import { IoIosArrowForward } from 'react-icons/io';
 import { BiPlus } from 'react-icons/bi';
+import Header from '../Main-Components/Header';
 
 export default function Contacts() {
   return (
     <Box>
-      <MeetingHeader />
+      <Header title={"Contacts"} />
+   
       <Box display="flex" alignContent="space-between" py="32px" gap="50px">
         <Box>
           <Typography mt="16px" sx={{ fontSize: "22px", fontWeight: "600" }}>
