@@ -2,14 +2,10 @@ import { useState } from "react";
 import Header from "../Main-Components/Header.jsx";
 import { Outlet, useNavigate } from "react-router-dom";
 import { BiPlus } from "react-icons/bi";
-import {
-  Box,
-  Tabs,
-  Tab,
-} from "@mui/material";
+import { Box, Tabs, Tab } from "@mui/material";
 import { NAVIGATION_ROUTES } from "../../constants/NavigationRoutes.js";
 
-const AvailabilityLayout = () => {
+const AnalyticsLayout = () => {
   const [value, setValue] = useState(NAVIGATION_ROUTES.AVAILABILITY_SCHEDULES);
   const navigate = useNavigate();
 
@@ -17,9 +13,10 @@ const AvailabilityLayout = () => {
     setValue(newValue);
     navigate(newValue);
   };
+
   return (
     <section style={{ padding: "10px", paddingLeft: "25px" }}>
-      <Header title={"Availability"} />
+      <Header title={"Analytics"} />
       <Box sx={{ width: "100%", height: "100%" }}>
         <Tabs
           value={value}
@@ -35,16 +32,12 @@ const AvailabilityLayout = () => {
           }}
         >
           <Tab
-            label="Schedules"
-            value={NAVIGATION_ROUTES.AVAILABILITY_SCHEDULES}
+            label="Events"
+            value={NAVIGATION_ROUTES.ANALYTICS_EVENTS}
           />
           <Tab
-            label="Holidays"
-            value={NAVIGATION_ROUTES.AVAILABILITY_HOLIDAYS}
-          />
-          <Tab
-            label="Calendar settings"
-            value={NAVIGATION_ROUTES.AVAILABILITY_SETTINGS}
+            label="Routing"
+            value={NAVIGATION_ROUTES.ANALYTICS_ROUTING}
           />
         </Tabs>
       </Box>
@@ -53,4 +46,4 @@ const AvailabilityLayout = () => {
   );
 };
 
-export default AvailabilityLayout;
+export default AnalyticsLayout;

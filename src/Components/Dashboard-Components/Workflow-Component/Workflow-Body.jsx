@@ -14,6 +14,7 @@ import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import Header from "../../Main-Components/Header.jsx";
 import UpgradeBanner from "../../Main-Components/Banner.jsx";
 import DropdownTextBox from "../../Main-Components/DropdownTextBox.jsx";
+import WorkflowCard from "./WorkflowCard.jsx";
 
 function WorkflowBody({ children }) {
   return (
@@ -111,6 +112,7 @@ function WorkflowBody({ children }) {
           </Typography>
         </Divider>
       </Box>
+      <WorkflowCard />
     </Box>
   );
 }

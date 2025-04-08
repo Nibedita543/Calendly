@@ -14,6 +14,10 @@ import Settings from "../Components/Dashboard-Components/Availability-Component/
 import Workflow from "../Components/Dashboard-Components/Workflow.jsx";
 import Routing from "../Components/Dashboard-Components/Routing.jsx";
 import IntegrationApp from "../Components/Dashboard-Components/IntegrationApp.jsx";
+import Analytics from "../Components/Dashboard-Components/Analytics.jsx";
+import RoutingBody from "../Components/Dashboard-Components/RoutingBody-component/RoutingBody.jsx";
+import EventsBody from "../Components/Dashboard-Components/Analytics-Components/EventsBody.jsx";
+import RoutingAnalytics from "../Components/Dashboard-Components/Analytics-Components/RoutingAnalytics.jsx";
 
 export default function ProtectedRouter() {
   const [isCollapsed, setIsCollapsed] = React.useState(false);
@@ -72,6 +76,10 @@ export default function ProtectedRouter() {
             </Route>
             <Route path={NAVIGATION_ROUTES.WORKFLOW} element={<Workflow />} />
             <Route path={NAVIGATION_ROUTES.ROUTING} element={<Routing />} />
+            <Route path="/analytics" element={<Analytics />}>
+              <Route path="events" element={<EventsBody />} />
+              <Route path="routing" element={<RoutingAnalytics />} />
+            </Route>
           </Routes>
         </Box>
       </Box>
