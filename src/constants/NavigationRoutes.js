@@ -17,6 +17,9 @@ export const NAVIGATION_ROUTES = {
   AVAILABILITY_SETTINGS: "/availability/settings",
   CONTACTS: "/contacts",
   WORKFLOW: "/workflow",
-  ROUTING:"/routing",
+  ROUTING: "/routing",
+  ANALYTICS: "/analytics",
+  ANALYTICS_EVENTS: "/analytics/events",
+  ANALYTICS_ROUTING: "/analytics/routing",
   INTEGRATION_AND_APPS: "/integration&apps",
 };

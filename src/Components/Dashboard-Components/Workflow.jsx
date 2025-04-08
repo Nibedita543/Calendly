@@ -5,18 +5,22 @@ import WorkflowBody from "./Workflow-Component/Workflow-Body";
 
 
 
+
 function WorkFlow() {
   return (
     <Box
       sx={{
         width: "100%",
+        
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        bgcolor: "#f5f5f5",
+        flexDirection: "column",
+        bgcolor: "yellow",
       }}
     >
     <WorkflowBody/>
+  
     </Box>
   );
 }
