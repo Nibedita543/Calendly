@@ -1,5 +1,5 @@
 import React from "react";
-import GlobalText from "../../../Globaly-Components/GlobalTypography/GlobalTypography.jsx";
+import GlobalText from "../../Globaly-Components/GlobalTypography/GlobalTypography.jsx";
 
 const Header = ({ title }) => {
   return (

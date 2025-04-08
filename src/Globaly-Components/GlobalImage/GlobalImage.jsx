@@ -11,7 +11,7 @@ const GlobalImage = ({
   className = "",
   onClick = () => {},
   sx = {},
-  fallbackSrc = "https://via.placeholder.com/150", // Default image if the main one fails
+  fallbackSrc = "https://via.placeholder.com/150",
   ...props
 }) => {
   const [imgSrc, setImgSrc] = useState(src);
@@ -23,18 +23,18 @@ const GlobalImage = ({
       alt={alt}
       width={width}
       height={height}
-      loading="lazy" // Optimized for performance
+      loading="lazy"
       className={className}
       onClick={onClick}
-      onError={() => setImgSrc(fallbackSrc)} // Handle broken image
+      onError={() => setImgSrc(fallbackSrc)}
       sx={{
         objectFit,
         borderRadius,
         display: "block",
         maxWidth: "100%",
         transition: "0.3s ease-in-out",
-        "&:hover": { opacity: 0.9 }, // Default hover effect
-        ...sx, // Allows additional styles dynamically
+        "&:hover": { opacity: 0.9 },
+        ...sx,
       }}
       {...props}
     />

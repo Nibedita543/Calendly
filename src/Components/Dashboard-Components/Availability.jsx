@@ -1,6 +1,5 @@
 import { useState } from "react";
-import Header from "../Dashboard-Components/Availability-Component/Header.jsx";
-import Content from "./Availability-Component/Schedules.jsx";
+import Header from "../Main-Components/Header.jsx";
 import { Outlet, useNavigate } from "react-router-dom";
 import { BiPlus } from "react-icons/bi";
 import {

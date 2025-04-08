@@ -9,11 +9,11 @@ import {
   MenuItem,
   Divider,
 } from "@mui/material";
-import MailOutlineIcon from "@mui/icons-material/MailOutline";
+
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
-import AddIcon from "@mui/icons-material/Add";
-import Header from "../Availability-Component/Header.jsx";
-import UpgradeBanner from "../Banner.jsx";
+import Header from "../../Main-Components/Header.jsx";
+import UpgradeBanner from "../../Main-Components/Banner.jsx";
+import DropdownTextBox from "../../Main-Components/DropdownTextBox.jsx";
 
 function WorkflowBody({ children }) {
   return (
@@ -32,28 +32,7 @@ function WorkflowBody({ children }) {
         buttonText="Explore the Teams plan"
       />
       {/* Dropdown */}
-      <Select
-        value="My Calendly"
-        sx={{
-          display: "inline-flex",
-          gap: "16px",
-          justifyContent: "space-between",
-          alignItems: "center",
-          width: "20%",
-          maxWidth: "30%",
-          height: "46px",
-          minHeight: "46px",
-          padding: "0.5em 1em",
-          border: "0.5px solid #a6bbd1",
-          borderRadius: "8px",
-          backgroundColor: "#ffffff",
-          color: "#0a2540",
-          textAlign: "left",
-        }}
-      >
-        <MenuItem value="My Calendly">My Calendly</MenuItem>
-        {/* Add more menu items if needed */}
-      </Select>
+      <DropdownTextBox />
       {/* Main Message */}
       <Box
         sx={{
@@ -115,7 +94,7 @@ function WorkflowBody({ children }) {
         </Link>
       </Box>
       {/* Bottom Line and Text */}
-    
+
       <Box sx={{ my: 4 }}>
         <Divider sx={{ display: "flex", alignItems: "center" }}>
           <Typography
