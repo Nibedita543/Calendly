@@ -18,9 +18,9 @@ const AvailabilityLayout = () => {
     navigate(newValue);
   };
   return (
-    <section style={{ padding: "10px", paddingLeft: "25px" }}>
+    <section style={{ paddingLeft: "25px", paddingRight: "25px" }}>
       <Header title={"Availability"} />
-      <Box sx={{ width: "100%", height: "100%" }}>
+      <Box sx={{ width: "94%", height: "100%" }}>
         <Tabs
           value={value}
           onChange={handleChange}
@@ -30,6 +30,11 @@ const AvailabilityLayout = () => {
               color: "#476788",
               textTransform: "none",
               fontSize: "var(--fontSizeMedium, 14px)",
+              fontFamily: `"Proxima Nova", sans-serif`,
+              lineHeight: 1.5,
+              wordBreak: "break-word",
+              overflowWrap: "break-word",
+              WebkitFontSmoothing: "antialiased",
             },
             textTransform: "none",
           }}

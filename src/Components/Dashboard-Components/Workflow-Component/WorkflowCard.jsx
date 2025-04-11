@@ -7,6 +7,7 @@ import CancelIcon from "@mui/icons-material/Cancel";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import EmailIcon from "@mui/icons-material/Email";
 import SmsIcon from "@mui/icons-material/Sms";
+import { Height } from "@mui/icons-material";
 
 const WorkflowCard = () => {
   const workflows = [
@@ -55,7 +56,8 @@ const WorkflowCard = () => {
       justifyContent={"space-between"}
       gap={3}
       p={2}
-      flexWrap="wrap"  
+      flexWrap="wrap"
+      opacity={0.8}
     >
       {workflows.map((workflow, index) => (
         <GlobalCard
@@ -65,8 +67,27 @@ const WorkflowCard = () => {
           icon={workflow.icon}
           buttonText="Add workflow"
           onButtonClick={() => alert(`Added: ${workflow.title}`)}
-          buttonProps={{ sx: { backgroundColor: "#7da9ff" } }}
-         
+          opacity={0.8}
+          buttonProps={{
+            sx: {
+              borderColor: "#006bff",
+              backgroundColor: "#006bff",
+              color: "#ffffff",
+              fontWeight: "var(--fontWeightBold, 600)",
+              fontSize: "11px",
+              width: "40%",
+              Height: "35px",
+              borderRadius: "40px",
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+              "&:hover": {
+                backgroundColor: "#0056d2",
+                borderColor: "#0056d2",
+              },
+              ml: 22,
+            },
+          }}
         />
       ))}
     </Box>

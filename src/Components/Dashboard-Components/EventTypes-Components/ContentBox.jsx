@@ -13,33 +13,37 @@ import { BiPlus } from "react-icons/bi";
 import LaunchIcon from "@mui/icons-material/Launch";
 import Header from "../../Main-Components/Header.jsx";
 
-
 const MuiUiClone = () => {
   return (
-    <Box sx={{ backgroundColor: "#f5f5f5", height: "100vh", width: "95%" }}>
+    <Box sx={{ backgroundColor: "#f5f5f5", height: "100vh", width: "94%" }}>
       <Header title={"Event types"} />
       <Card
         sx={{
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          p: 2,
           mb: 4,
-          mt: 4,
+          mt: 6,
           backgroundColor: "#f5f5f5",
+          borderBottom: "0.5px solid #d4e0ed",
         }}
       >
         <Box
           sx={{
-            width: 50,
-            height: 50,
+            width: 44,
+            height: 44,
             borderRadius: "50%",
             backgroundColor: "#e7edf6",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            fontSize: 19,
+            fontSize: 17,
             border: "none",
+            fontWeight: "var(--fontWeightStandard, 400)",
+            fontFamily: '"Proxima Nova", sans-serif',
+            lineHeight: 1.5,
+            color: "#0a2540",
+            ml: 2,
           }}
         >
           N
@@ -47,9 +51,11 @@ const MuiUiClone = () => {
         <Box sx={{ ml: 4, flexGrow: 1 }}>
           <Typography
             sx={{
-              color: "currentcolor",
+              margin: 0,
+              lineHeight: 1.4,
+              fontSize: "var(--fontSizeSmall, 13px)",
               fontWeight: "var(--fontWeightStandard, 400)",
-              fontSize: "var(--fontSizeSmall, 15px)",
+              color: "rgb(10, 37, 64)",
             }}
           >
             Nihar Sasini
@@ -70,7 +76,7 @@ const MuiUiClone = () => {
                 maxWidth: 340,
                 textOverflow: "ellipsis",
                 whiteSpace: "nowrap",
-                fontSize: "var(--fontSizeSmall, 18px)",
+                fontSize: "var(--fontSizeSmall, 14px)",
               },
             }}
           />
@@ -81,27 +87,47 @@ const MuiUiClone = () => {
             maxWidth: "100%",
             mb: 3,
             mt: 3,
+            mr: 2,
             borderRadius: "28px",
-            padding: "8px 16px",
-            fontWeight: 400,
+            padding: "6px 14px",
+            fontWeight: 300,
             textTransform: "none",
-            border: " 1px solid#476788",
+            border: " 0.8px solid#476788",
             "&:hover": { backgroundColor: "#e9f0ff" },
-            color: "#0a2540",
             bgcolor: "#f5f5f5",
+            color: "#0a2540",
+            fontSize: "var(--fontSizeSmall, 13.5px)",
+            lineHeight: "20px",
           }}
         >
           <BiPlus size={"18px"} style={{ marginRight: 4 }} />
           New Event Type
         </Button>
+        <SettingsIcon
+          sx={{
+            width: "20px",
+            height: "20px",
+            position: "relative",
+            display: "inline-flex",
+            verticalAlign: "middle",
+            justifyContent: "center",
+            alignItems: "center",
+            padding: "4px",
+            borderRadius: "4px",
+            backgroundColor: "transparent",
+            color: "#0a2540",
+            transition: "all 0.3s",
+          }}
+        />
       </Card>
+
       <Card
         sx={{
           display: "flex",
           flexDirection: "column",
           boxSizing: "border-box",
-          height: "250px",
-          width: "440px",
+          height: "240px",
+          width: "400px",
           minHeight: "226px",
           border: "1px solid var(--color-grey-3, #CCCCCC)",
           borderRadius: "4px",
@@ -111,7 +137,7 @@ const MuiUiClone = () => {
       >
         <Box
           sx={{
-            height: "7px",
+            height: "6px",
             marginTop: "-1px",
             marginRight: "-1px",
             marginLeft: "-1px",
@@ -129,15 +155,31 @@ const MuiUiClone = () => {
             width: "100%",
           }}
         >
-          <Checkbox sx={{ ml: 0.8 }} />
+          <Checkbox
+            sx={{
+              position: "relative",
+              flexShrink: 0,
+              width: "16px",
+              height: "16px",
+              borderRadius: "13.333%",
+              backgroundColor:
+                "var(--colorBackgroundStandard, var(--coreColorNeutral0))",
+              WebkitUserSelect: "none",
+              MozUserSelect: "none",
+              userSelect: "none",
+              padding: "0.5px",
+              boxShadow: "inset 0 0 0 1px #a6bbd1",
+              ml: 2,
+            }}
+          />
           <IconButton>
-            <SettingsIcon />
+            <SettingsIcon sx={{ mr: 2 }} />
           </IconButton>
         </Box>
         <Box
           sx={{
             p: 2,
-            borderRadius: 2,
+            borderRadius: "2px",
             display: "flex",
             flexDirection: "column",
           }}
@@ -153,7 +195,7 @@ const MuiUiClone = () => {
               variant="h6"
               sx={{
                 fontWeight: "var(--fontWeightStandard, 500)",
-                fontSize: "28px",
+                fontSize: "23px",
                 lineHeight: 1.4,
               }}
             >
@@ -162,9 +204,11 @@ const MuiUiClone = () => {
           </Box>
           <Typography
             sx={{
+              margin: 0,
+              lineHeight: 1.4,
+              fontSize: "var(--fontSizeMedium, 15px)",
+              fontWeight: "var(--fontWeightStandard, 400)",
               color: "#476788",
-              fontWeight: "var(--fontWeightStandard, 530)",
-              fontSize: "17px",
             }}
           >
             30 min, One-on-One
@@ -172,10 +216,12 @@ const MuiUiClone = () => {
           <Typography
             color="#004eba"
             sx={{
+              textDecoration: "underline",
+              color: "#004eba",
+              backgroundColor: "transparent",
               cursor: "pointer",
-              mt: 1,
-              fontWeight: "var(--fontWeightStandard, 400)",
-              fontSize: "19px",
+              WebkitTextDecoration: "underline",
+              marginTop: "10px",
             }}
           >
             View booking page

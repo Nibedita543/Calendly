@@ -24,9 +24,9 @@ export default function DropdownTextBox() {
   };
 
   return (
-    <Box display="flex" alignItems="center" gap="" width="100%">
+    <Box display="flex" alignItems="center" gap="" width="100%" mt={6}>
       <TextField
-        style={{ marginTop: "30px", width: "20%" }}
+        style={{ marginTop: "", width: "auto" }}
         variant="outlined"
         placeholder="My Calendly"
         onClick={handleClick}

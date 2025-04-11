@@ -32,9 +32,7 @@ function WorkflowBody({ children }) {
         message="Upgrade to the Teams plan to access this feature and other advanced scheduling tools."
         buttonText="Explore the Teams plan"
       />
-      {/* Dropdown */}
       <DropdownTextBox />
-      {/* Main Message */}
       <Box
         sx={{
           textAlign: "center",
@@ -48,14 +46,13 @@ function WorkflowBody({ children }) {
         <img
           src="https://assets.calendly.com/assets/frontend/media/workflows_icon-90ccbc36ff93eba360f6.svg"
           alt="Workflow Icon"
-          style={{ width: 100, height: 80 }}
+          style={{ width: 120, height: 100 }}
         />
 
         <Typography
           sx={{
             color: "rgb(10, 37, 64)",
             fontSize: "var(--fontSizeHeadline3, 24px)",
-            m: 0,
             fontWeight: "var(--fontWeightBold, 700)",
             lineHeight: "var(--lineHeightStandard, 1.4)",
           }}
@@ -96,7 +93,7 @@ function WorkflowBody({ children }) {
       </Box>
       {/* Bottom Line and Text */}
 
-      <Box sx={{ my: 4 }}>
+      <Box sx={{ mt: 8}}>
         <Divider sx={{ display: "flex", alignItems: "center" }}>
           <Typography
             variant="caption"
