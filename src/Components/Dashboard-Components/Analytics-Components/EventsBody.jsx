@@ -46,13 +46,16 @@ const EventsBody = () => {
             disabled: true,
             startIcon: <span style={{ fontSize: 18 }}>＋</span>,
             sx: {
-              bgcolor: "#f1f5fb",
-              color: "#99a1b3",
-              fontWeight: 600,
+              bgcolor: "#e7edf6 !important",
+              color: "#a6bbd1",
+              border: "#f0f3f8",
               px: 2,
-              py: 1,
-              borderRadius: 3,
+              py: 1.3,
+              borderRadius: 7,
               textTransform: "none",
+              fontSize: 13,
+              fontWeight: 600,
+              width: "fit-content",
             },
           }}
           sx={{ flex: 1, bgcolor: "#fff" }}
@@ -67,7 +70,7 @@ const EventsBody = () => {
           />
         </Box>
       </Box>
-    <AnalyticsCard />
+      <AnalyticsCard />
     </>
   );
 };

@@ -2,7 +2,11 @@ import React from "react";
 import GlobalButton from "../../Globaly-Components/GlobalButton/GlobalButton.jsx";
 import GlobalIcon from "../../Globaly-Components/GlobalIcon/GlobalIcon.jsx"; // make sure path is correct
 
-export default function CreateButton({ isCollapsed, toggleCollpase }) {
+export default function CreateButton({
+  isCollapsed,
+  toggleCollpase,
+  title = "",
+}) {
   return (
     <GlobalButton
       onClick={toggleCollpase}
@@ -11,7 +15,7 @@ export default function CreateButton({ isCollapsed, toggleCollpase }) {
       title={
         <span style={{ display: "flex", alignItems: "center", gap: "8px" }}>
           <GlobalIcon name="Add" size="16px" />
-          {!isCollapsed && "Create"}
+          {!isCollapsed && title}
         </span>
       }
       sx={{
@@ -27,3 +31,4 @@ export default function CreateButton({ isCollapsed, toggleCollpase }) {
     />
   );
 }
+

@@ -37,7 +37,7 @@ function RoutingBody({ children }) {
             component="img"
             src="https://assets.calendly.com/assets/frontend/media/routing_forms_icon-cdb9903527c4a970315b.svg"
             alt="Routing Icon"
-            sx={{ width: 80, height: 80 }}
+            sx={{ width: 90, height: 90 }}
           />
 
           {/* Title */}
@@ -91,14 +91,15 @@ function RoutingBody({ children }) {
             startIcon={<AddIcon />}
             disabled
             sx={{
-              bgcolor: "#e7edf6",
+              bgcolor: "#e7edf6 !important",
               color: "#a6bbd1",
               border: "#f0f3f8",
-              fontWeight: 500,
-              px: 3,
-              py: 1.5,
+              px: 2,
+              py: 1.3,
               borderRadius: 7,
               textTransform: "none",
+              fontSize: 13,
+              fontWeight: 600,
             }}
           >
             New routing form

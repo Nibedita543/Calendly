@@ -3,6 +3,7 @@ import { Box, Button, IconButton } from "@mui/material";
 import PersonAddAltIcon from "@mui/icons-material/PersonAddAlt";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import Typography from "@mui/material/Typography";
+import { yellow } from "@mui/material/colors";
 
 export default function DashNavbar() {
   return (
@@ -12,10 +13,10 @@ export default function DashNavbar() {
         justifyContent: "center",
         alignItems: "center",
         width: "100%",
-        height: "65px",
+        height: "60px",
         padding: "12px 0",
         background:
-          "linear-gradient(0deg, rgba(250, 250, 250, 0%) 0%, rgb(250, 250, 250) 1%)",
+          "linear-gradient(0deg, rgba(250, 250, 250, 0%) 0%, rgba(250, 250, 250, 100%) 16%)",
       }}
     >
       <Box />
@@ -25,10 +26,10 @@ export default function DashNavbar() {
           justifyContent: "end",
           alignItems: "center",
           width: "95%",
-          height: "50%",
+          height: "30%",
           padding: "12px 0",
           background:
-            "linear-gradient(0deg, rgba(250, 250, 250, 0%) 0%, rgba(250, 250, 250, 1) 16%)",
+            "linear-gradient(0deg, rgba(250, 250, 250, 0%) 0%, rgba(250, 250, 250, 100%) 16%)",
         }}
       >
         <Box
@@ -39,7 +40,22 @@ export default function DashNavbar() {
             bgcolor: "white",
           }}
         >
-          <IconButton sx={{ width: 34, height: 34, overflow: "hidden" }}>
+          <IconButton
+            sx={{
+              position: "relative",
+              display: "inline-flex",
+              verticalAlign: "middle",
+              justifyContent: "center",
+              alignItems: "center",
+              width: "40px",
+              height: "40px",
+              padding: "4px",
+              borderRadius: "4px",
+              backgroundColor: "transparent",
+              color: "#0a2540",
+              transition: "all 0.3s",
+            }}
+          >
             <PersonAddAltIcon />
           </IconButton>
           <Box
@@ -53,16 +69,23 @@ export default function DashNavbar() {
             <Button
               variant="contained"
               sx={{
-                background: "#E7EDF6",
-                border: "1px solid transparent",
+                border: "2px solid transparent",
                 borderRadius: "50%",
-                width: "34px",
-                minWidth: "35px",
-                height: "34px",
-                minHeight: "3px",
-                fontSize: "var(--fontSizeSmall, 15px)",
-                color: "black",
-                fontWeight: "inherit",
+                display: "inline-flex",
+                verticalAlign: "middle",
+                justifyContent: "center",
+                alignItems: "center",
+                overflow: "hidden",
+                background: "#e7edf6",
+                width: "36px",
+                minWidth: "37px",
+                height: "36px",
+                fontSize: "var(--fontSizeSmall, 14px)",
+                color: "#1A237E",
+                fontWeight: "400",
+                lineHeight: "20px",
+                textTransform: "uppercase",
+                padding: "0 2px",
               }}
             >
               N
@@ -72,6 +95,7 @@ export default function DashNavbar() {
               sx={{
                 display: "flex",
                 alignItems: "center",
+                justifyContent: "center",
                 verticalAlign: "top",
                 fontSize: "20px",
                 flexShrink: 0,
@@ -79,7 +103,9 @@ export default function DashNavbar() {
                 height: "34px",
               }}
             >
-              <ArrowDropDownIcon sx={{ fontSize: "35px", color: "#1A237E", pt: 1}} />
+              <ArrowDropDownIcon
+                sx={{ fontSize: "35px", color: "#1A237E", pt: 1 }}
+              />
             </IconButton>
           </Box>
         </Box>

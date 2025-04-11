@@ -29,15 +29,24 @@ export default function Content() {
 
   return (
     <>
-      <Box sx={{ mt: 3, p: 2, border: "1px solid #ddd", borderRadius: 2 }}>
+      <Box
+        sx={{
+          mt: 3,
+          p: 3,
+          border: "1px solid #ddd",
+          borderTopLeftRadius: 8,
+          borderTopRightRadius: 8,
+        }}
+      >
         <Typography
           variant="h6"
           sx={{
-            color: "#476788",
             height: "17px",
             fontSize: "var(--fontSizeXSmall, 12px)",
             letterSpacing: "0.1em",
             textTransform: "uppercase",
+            color: "#476788",
+            margin: 0,
             fontWeight: "var(--fontWeightBold, 700)",
             lineHeight: "var(--lineHeightStandard, 1.4)",
           }}
@@ -45,8 +54,6 @@ export default function Content() {
           Schedule
         </Typography>
         <Typography
-          variant="subtitle1"
-          color="primary"
           display="flex"
           alignItems="center"
           justifyContent="space-between"
@@ -64,13 +71,47 @@ export default function Content() {
           <Touggle />
         </Typography>
 
-        <Typography variant="body2">Active on: 1 event type</Typography>
+        <Typography
+          variant="body2"
+          sx={{
+            color: "rgb(10, 37, 64)",
+            fontWeight: "var(--fontWeightSemibold, 500)",
+            fontSize: "var(--fontSizeSmall, 14px)",
+            margin: 0,
+            lineHeight: 1.4,
+            paddingTop: "10px",
+          }}
+        >
+          Active on:{" "}
+          <Box
+            component="span"
+            sx={{
+              display: "inline-flex",
+              gap: "4px",
+              alignItems: "center",
+              color: "rgb(0, 105, 255)",
+              margin: 0,
+              padding: 0,
+              border: "none",
+              backgroundColor: "transparent",
+              font: "inherit",
+              textAlign: "center",
+              WebkitTextDecoration: "none",
+              textDecoration: "none",
+              cursor: "pointer",
+            }}
+          >
+            1 event type
+          </Box>
+        </Typography>
       </Box>
+
       <Box
         sx={{
           p: 4,
           border: "1px solid #ddd",
-          borderRadius: 2,
+          borderBottomLeftRadius: 8,
+          borderBottomRightRadius: 8,
           display: "flex",
         }}
       >
