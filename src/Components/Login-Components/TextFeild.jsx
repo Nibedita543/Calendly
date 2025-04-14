@@ -6,16 +6,14 @@ const CustomTextField = () => {
     <TextField
       fullWidth
       placeholder="Enter your email"
-      variant="outlined"
       sx={{
         width: "100%",
         boxSizing: "border-box",
         background: "rgb(255, 255, 255)",
         padding: "8px 16px",
-        color: "rgb(11, 53, 88)",
+        color: "#476788",
         fontWeight: 500,
         fontSize: "1.125rem",
-        border: "1px solid rgb(166, 187, 209)",
         borderRadius: "8px",
       }}
     />

@@ -1,22 +1,30 @@
 import React from "react";
  import GlobalButton from "../../Globaly-Components/GlobalButton/GlobalButton.jsx";
-import GoogleIcon from "@mui/icons-material/Google"; // Assuming you're using MUI's Google Icon
-
+import google from "../../assets/google.svg"
 const GoogleButton = () => {
   return (
     <GlobalButton
       fullWidth
       variant="outlined"
-      startIcon={<GoogleIcon />}
+      startIcon={
+        <img
+          src={google}
+          alt="Google Icon"
+          style={{
+            width: "40px",
+            height: "40px",
+          }}
+        />
+      }
       sx={{
+        width:"90%",
         cursor: "pointer",
         transition: "0.2s linear, background-position 1ms, background-size 1ms",
         color: "rgb(71, 103, 136)", // Text color
         border: "1px solid rgb(71, 103, 136)",
         backgroundColor: "transparent",
-        padding: "10px 18px",
+        padding: "5px 10px",
         fontSize: "1.125rem",
-        lineHeight: 2,
         position: "relative",
         height: "fit-content",
         flexDirection: "row",

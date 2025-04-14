@@ -156,13 +156,17 @@ const Navbar = () => {
             size="large"
             sx={{
               backgroundColor: "rgb(0, 107, 255)",
+              opacity:"1",
               color: "white",
+              width: "100px",
+              height: "40px",
+              fontSize: "14px",
               fontWeight: "600",
-              padding: "10px 16px",
+              padding: " 10px",
               "&:hover": { backgroundColor: "rgb(0, 78, 186)" },
             }}
           >
-            Get Started
+            Get started
           </GlobalButton>
         </Toolbar>
       </AppBar>
