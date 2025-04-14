@@ -10,7 +10,6 @@ import "./Login.css";
 function Login() {
   return (
     <Container
-      maxWidth="lg"
       sx={{
         display: "flex",
         flexDirection: "column",
@@ -18,7 +17,7 @@ function Login() {
         mt: 5,
         "-webkit-box-align": "center",
         gap: "25px",
-        width: "470px",
+        width: "450px",
         backgroundColor: "transparent",
       }}
     >
@@ -29,7 +28,7 @@ function Login() {
         sx={{
           backgroundColor: "rgb(255, 255, 255)",
           border: "1px solid rgb(212, 224, 237)",
-          borderRadius: "24px",
+          borderRadius: "16px",
           padding: "30px",
           boxShadow:
             "rgba(71, 103, 136, 0.04) 0px 4px 5px 0px, rgba(71, 103, 136, 0.03) 0px 8px 15px 0px, rgba(71, 103, 136, 0.0)",
@@ -44,10 +43,8 @@ function Login() {
         <ContinueButton />
         <Divider
           sx={{
-            width: "100%",
-            mb: 2,
+            width: "90%",
             color: "rgb(71, 103, 136)",
-            fontSize: "1.130rem",
           }}
         >
           OR

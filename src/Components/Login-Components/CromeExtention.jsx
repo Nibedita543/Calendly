@@ -2,6 +2,7 @@ import React from "react";
 import { Box } from "@mui/material";
  import GlobalButton from "../../Globaly-Components/GlobalButton/GlobalButton.jsx";
 import GlobalImage from "../../Globaly-Components/GlobalImage/GlobalImage.jsx";
+import rightArrow from "../../assets/right-arrow.svg"
 const ChromeExtension = () => {
   return (
     <Box
@@ -38,7 +39,7 @@ const ChromeExtension = () => {
         }}
       >
         <GlobalImage
-          src="https://images.ctfassets.net/k0lk9kiuza3o/1iXaOfST...jhgLV/9c262e7842e1e78a9e595a4477ecde7d/Chrome.svg"
+          src="https://images.ctfassets.net/k0lk9kiuza3o/1iXaOfSTG4LH14hl3jhgLV/9c262e7842e1e78a9e595a4477ecde7d/Chrome.svg"
           alt="Chrome Logo"
           width="24px"
           height="24px"
@@ -46,6 +47,7 @@ const ChromeExtension = () => {
           borderRadius="50%" // Optional: to make the image circular
         />
         Get the Chrome Extension
+        <img src={rightArrow} width="20px"/>
       </GlobalButton>
     </Box>
   );

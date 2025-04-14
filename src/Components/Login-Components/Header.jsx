@@ -12,8 +12,9 @@ const Header = () => {
         fontSize: "2.343rem",
         lineHeight: 1.2,
         fontWeight: 700,
-        whiteSpace: "pre-line",
+        whiteSpace: "nowrap",
         color: "rgb(11, 53, 88)",
+        overflow: "hidden",
         width: "100%",
       }}
     >

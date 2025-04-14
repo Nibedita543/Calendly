@@ -71,60 +71,85 @@ function Signup() {
             display: "flex",
             gap: 1,
             justifyContent: "center",
-            marginTop: 2,
-            boxShadow: "none",
+            mt: 2,
             flexDirection: { xs: "column", sm: "row" },
-            width: "100%",
+            width: "100%", // ✅ This is good
           }}
         >
-          <Button
-            // variant="text"
-            sx={{
-              backgroundColor: "rgb(0, 107, 255)",
-              color: "white",
-              textTransform: "none",
-              fontWeight: "bold",
-              borderRadius: "10px",
-              display: "flex",
-              alignItems: "center",
-              gap: 1.5,
-              // width: { xs: "100%" },
-              "&:hover": { backgroundColor: "rgb(21, 85, 174)" },
-            }}
-          >
-            <img
-              src="https://calendly.com/media/googleLogo.svg"
-              alt="Google logo"
-              width="26"
-              height="26"
-            />
-            Sign up with Google
-          </Button>
-          <Button
-            variant="contained"
-            sx={{
-              backgroundColor: "#2F4A80",
-              color: "white",
-              textTransform: "none",
-              fontSize: "16px",
-              fontWeight: "bold",
-              padding: "10px 20px",
-              borderRadius: "10px",
-              display: "flex",
-              alignItems: "center",
-              gap: 1.5,
-              // width: { xs: "100%" },
-              "&:hover": { backgroundColor: "#233B67" },
-            }}
-          >
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"
-              alt="Microsoft logo"
-              width="24"
-              height="24"
-            />
-            Sign up with Microsoft
-          </Button>
+          <Box sx={{ flex: 1, display: "flex", justifyContent: "center" }}>
+            <Button
+              fullWidth
+              sx={{
+                height: "60px",
+                backgroundColor: "rgb(0, 107, 255)",
+                color: "white",
+                textTransform: "none",
+                padding: "5px 10px",
+                fontSize: { xs: "14px", sm: "16px" },
+                whiteSpace: "nowrap",
+                fontWeight: "bold",
+                borderRadius: "8px",
+                display: "flex",
+                alignItems: "center",
+                gap: { xs: 1, sm: 1.5 },
+                justifyContent: "center",
+                "&:hover": { backgroundColor: "rgb(21, 85, 174)" },
+              }}
+            >
+              <img
+                src="https://calendly.com/media/googleLogo.svg"
+                alt="Google logo"
+                width="26"
+                height="26"
+                style={{
+                  backgroundColor: "white", // white box
+                  padding: "6px", // space around the image
+                  borderRadius: "4px", // slightly rounded corners
+                  height: "30px",
+                  width: "30px",
+                }}
+              />
+              <span style={{ whiteSpace: "nowrap" }}>Sign up with Google</span>
+            </Button>
+          </Box>
+          <Box sx={{ flex: 1, display: "flex", justifyContent: "center" }}>
+            <Button
+              fullWidth
+              variant="contained"
+              sx={{
+                whiteSpace: "nowrap",
+                backgroundColor: "#2F4A80",
+                color: "white",
+                textTransform: "none",
+                fontSize: "16px",
+                fontWeight: "bold",
+                padding: "5px 10px",
+                fontSize: { xs: "14px", sm: "16px" },
+                borderRadius: "8px",
+                display: "flex",
+                alignItems: "center",
+                gap: 1.5,
+                justifyContent: "center",
+                boxShadow:"none",
+                "&:hover": { backgroundColor: "#233B67" },
+              }}
+            >
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"
+                alt="Microsoft logo"
+                width="24"
+                height="24"
+                style={{
+                  backgroundColor: "white", // white box
+                  padding: "6px", // space around the image
+                  borderRadius: "4px", // slightly rounded corners
+                  height: "30px",
+                  width: "30px",
+                }}
+              />
+              <span> Sign up with Microsoft</span>
+            </Button>
+          </Box>
         </Box>
         <Link href="/login" target="_blank" id="signup-login-link">
           Login

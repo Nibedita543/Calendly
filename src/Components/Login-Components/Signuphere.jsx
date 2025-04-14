@@ -1,12 +1,13 @@
 import React from "react";
 import { Typography, Link } from "@mui/material";
+import rightArrow from "../../assets/right-arrow.svg"
 
 const SignupHere = () => {
   return (
     <Typography
       variant="body2"
       sx={{
-        width: "100%",
+        width: "90%",
         height: "100%",
         paddingLeft: "0px",
         paddingTop: "16px",
@@ -18,8 +19,13 @@ const SignupHere = () => {
       }}
     >
       Don't have an account?{" "}
-      <Link href="/signup" className="signup-link">
+      <Link
+        href="/signup"
+        className="signup-link"
+        sx={{ textDecoration: "none" }}
+      >
         Sign up for free
+          <img src={rightArrow} style={{ fill: "rgb(0, 107, 255)" }} />
       </Link>
     </Typography>
   );
