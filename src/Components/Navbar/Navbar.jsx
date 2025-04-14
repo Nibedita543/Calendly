@@ -135,7 +135,7 @@ const Navbar = () => {
                 variant="text"
                 size="medium"
                 sx={{
-                  color: " rgb(11, 53, 88)",
+                  color: "rgb(11, 53, 88)",
                   fontWeight: "700",
                   textTransform: "none",
                   display: "flex",

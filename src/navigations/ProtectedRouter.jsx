@@ -76,10 +76,12 @@ export default function ProtectedRouter() {
             </Route>
             <Route path={NAVIGATION_ROUTES.WORKFLOW} element={<Workflow />} />
             <Route path={NAVIGATION_ROUTES.ROUTING} element={<Routing />} />
-            <Route path="/analytics" element={<Analytics />}>
+            <Route path={NAVIGATION_ROUTES.ANALYTICS} element={<Analytics />}>
               <Route path="events" element={<EventsBody />} />
               <Route path="routing" element={<RoutingAnalytics />} />
             </Route>
+
+            <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </Box>
       </Box>

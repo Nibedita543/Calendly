@@ -21,5 +21,6 @@ export const NAVIGATION_ROUTES = {
   ANALYTICS: "/analytics",
   ANALYTICS_EVENTS: "/analytics/events",
   ANALYTICS_ROUTING: "/analytics/routing",
+  UPGRADE_PLAN: "/upgrade",
   INTEGRATION_AND_APPS: "/integration&apps",
 };

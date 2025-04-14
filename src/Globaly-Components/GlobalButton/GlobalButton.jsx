@@ -3,13 +3,14 @@ import { Button } from "@mui/material";
 
 const GlobalButton = forwardRef((props, ref) => {
   const {
-    title, 
+    title,
     variant = "contained",
     size = "medium",
     color = "primary",
     fullWidth = false,
     onClick,
     sx = {},
+    children,
     ...otherProps
   } = props;
 
@@ -31,7 +32,8 @@ const GlobalButton = forwardRef((props, ref) => {
       }}
       {...otherProps}
     >
-      {title}
+      {/* {title} */}
+      {children}
     </Button>
   );
 });
