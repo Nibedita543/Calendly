@@ -23,4 +23,9 @@ export const NAVIGATION_ROUTES = {
   ANALYTICS_ROUTING: "/analytics/routing",
   UPGRADE_PLAN: "/upgrade",
   INTEGRATION_AND_APPS: "/integration&apps",
+
+  // admin routes
+  ADMIN_DASHBOARD: "/admin",
+  ADMIN_USERS: "/admin/users",
+  ADMIN_GROUPS: "/admin/groups",
 };

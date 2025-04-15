@@ -81,6 +81,20 @@ export default function ProtectedRouter() {
               <Route path="routing" element={<RoutingAnalytics />} />
             </Route>
 
+            {/* admin center routes */}
+            <Route
+              path={NAVIGATION_ROUTES.ADMIN_DASHBOARD}
+              element={<>hiiiiiiiiiiiii</>}
+            />
+            <Route
+              path={NAVIGATION_ROUTES.ADMIN_USERS}
+              element={<>Admin users</>}
+            />
+            <Route
+              path={NAVIGATION_ROUTES.ADMIN_GROUPS}
+              element={<>admin groups</>}
+            />
+
             <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </Box>

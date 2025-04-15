@@ -64,7 +64,7 @@ export const SidebarData = [
   {
     title: "Admin center",
     icon: <AiOutlineCrown style={{ fontSize: "20px" }} />,
-    link: "/admincenter",
+    link: NAVIGATION_ROUTES.ADMIN_DASHBOARD,
   },
   // {
   //   title: "Help",
