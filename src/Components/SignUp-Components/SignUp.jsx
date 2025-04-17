@@ -5,11 +5,11 @@ import {
   Typography,
   Paper,
   Box,
-  Link,
   Divider,
   Chip,
 } from "@mui/material";
 import "./SIgnUp.css";
+import { Link } from "react-router-dom";
 
 function Signup() {
   return (
@@ -121,7 +121,6 @@ function Signup() {
                 backgroundColor: "#2F4A80",
                 color: "white",
                 textTransform: "none",
-                fontSize: "16px",
                 fontWeight: "bold",
                 padding: "5px 10px",
                 fontSize: { xs: "14px", sm: "16px" },
@@ -130,7 +129,7 @@ function Signup() {
                 alignItems: "center",
                 gap: 1.5,
                 justifyContent: "center",
-                boxShadow:"none",
+                boxShadow: "none",
                 "&:hover": { backgroundColor: "#233B67" },
               }}
             >
@@ -151,7 +150,7 @@ function Signup() {
             </Button>
           </Box>
         </Box>
-        <Link href="/login" target="_blank" id="signup-login-link">
+        <Link to="/login" id="signup-login-link">
           Login
         </Link>
       </Paper>

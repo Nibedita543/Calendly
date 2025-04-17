@@ -1,6 +1,6 @@
-import Signup from "./Components/SignUp-Components/SignUp";
-import RootRouter from "./navigations/RootRouter";
 
+import RootRouter from "./navigations/RootRouter";
+import "./App.css";
 function App() {
   return (
     <>
