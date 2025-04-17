@@ -1,6 +1,7 @@
 import React from "react";
-import { Typography, Link } from "@mui/material";
-import rightArrow from "../../assets/right-arrow.svg"
+import { Typography } from "@mui/material";
+import rightArrow from "../../assets/right-arrow.svg";
+import { Link } from "react-router-dom";
 
 const SignupHere = () => {
   return (
@@ -19,13 +20,9 @@ const SignupHere = () => {
       }}
     >
       Don't have an account?{" "}
-      <Link
-        href="/signup"
-        className="signup-link"
-        sx={{ textDecoration: "none" }}
-      >
+      <Link to="/" className="signup-link" sx={{ textDecoration: "none" }}>
         Sign up for free
-          <img src={rightArrow} style={{ fill: "rgb(0, 107, 255)" }} />
+        <img src={rightArrow} style={{ fill: "rgb(0, 107, 255)" }} />
       </Link>
     </Typography>
   );

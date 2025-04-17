@@ -133,7 +133,6 @@ const TabTables = () => {
             ))}
           </TableRow>
         </TableHead>
-
         <TableBody>
           {features.map((feature, idx) => (
             <TableRow

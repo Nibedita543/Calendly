@@ -8,7 +8,7 @@ import { Box } from "@mui/material";
 
 export default function PublicRouter() {
   return (
-    <div>
+    <>
       {/* header */}
       <Navbar />
       <Box sx={{ mt: 20 }}>
@@ -22,6 +22,6 @@ export default function PublicRouter() {
       <Box sx={{ mt: 15 }}>
         <Footer />
       </Box>
-    </div>
+    </>
   );
 }

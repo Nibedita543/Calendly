@@ -6,15 +6,22 @@ const CustomTextField = () => {
     <TextField
       fullWidth
       placeholder="Enter your email"
+      variant="outlined"
       sx={{
-        width: "100%",
-        boxSizing: "border-box",
+        width: "93%",
         background: "rgb(255, 255, 255)",
-        padding: "8px 16px",
-        color: "#476788",
-        fontWeight: 500,
-        fontSize: "1.125rem",
         borderRadius: "8px",
+
+        "& .MuiOutlinedInput-root": {
+          borderRadius: "8px",
+        },
+
+        input: {
+          fontSize: "1rem",
+          color: "rgb(11, 53, 88)",
+          fontWeight: "600",
+          height: "20px",
+        },
       }}
     />
   );
