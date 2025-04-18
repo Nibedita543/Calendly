@@ -54,7 +54,7 @@ export const SidebarData = [
     icon: (
       <AiOutlineDollarCircle style={{ color: "#0069FF", fontSize: "20px" }} />
     ),
-    link: "/upgradeplan",
+    link: NAVIGATION_ROUTES.UPGRADE_PLAN,
   },
   {
     title: "Analytics",
@@ -66,5 +66,4 @@ export const SidebarData = [
     icon: <AiOutlineCrown style={{ fontSize: "20px" }} />,
     link: NAVIGATION_ROUTES.ADMIN_DASHBOARD,
   },
- 
 ];

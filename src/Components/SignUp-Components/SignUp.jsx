@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 
 function Signup() {
   return (
-    <Container maxWidth="lg">
+    <Container sx={{ display: "flex", flexDirection: "column" }}>
       <Paper
         elevation={3}
         sx={{

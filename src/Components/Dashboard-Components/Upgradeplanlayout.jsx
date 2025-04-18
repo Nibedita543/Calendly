@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, {  useState } from "react";
+
+import CloseIcon from "@mui/icons-material/Close";
 import {
   Box,
   Typography,
@@ -6,16 +8,44 @@ import {
   ToggleButton,
   IconButton,
   Card,
+  Tabs,
+  Tab,
   CardContent,
   Button,
   Grid,
 } from "@mui/material";
-import CloseIcon from "@mui/icons-material/Close";
-import TabTables from "./UpgradePlan-Componennt/TabTables";
+import ViewAllTable from "./UpgradePlan-Componennt/ViewAllTable";
 
-const Upgradeplan = () => {
+const UpgradeplanLayout = () => {
+  const [tabValue, setTabValue] = React.useState(0);
+
+  const tabList = [
+    {
+      label: "View All",
+      value: 0,
+    },
+    {
+      label: "Core features",
+      value: 1,
+    },
+    {
+      label: "Customizations",
+      value: 2,
+    },
+    {
+      label: "Team tools",
+      value: 3,
+    },
+    {
+      label: "Integrations",
+      value: 4,
+    },
+    {
+      label: "Security and controls",
+      value: 5,
+    },
+  ];
   const [billing, setBilling] = useState("yearly");
-
   const handleBillingChange = (event, newBilling) => {
     if (newBilling !== null) {
       setBilling(newBilling);
@@ -50,24 +80,47 @@ const Upgradeplan = () => {
     },
   ];
 
+  const renderTables = () => {
+    switch (tabValue) {
+      case 0:
+        return <ViewAllTable />;
+      case 1:
+        return <></>;
+      case 2:
+        return <></>;
+      case 3:
+        return <></>;
+      case 4:
+        return <></>;
+      case 5:
+        return <></>;
+      case 6:
+        return <></>;
+      case 7:
+        return <></>;
+      default:
+        return null;
+    }
+  };
+
+ 
   return (
     <Box
-      sx={{
-        width: "100%",
-        height: "100%",
+      sx={{   
+        gap: "20px",
         display: "flex",
-        justifyContent: "center",
+        justifyContent: "space-evenly",
         flexDirection: "column",
         alignItems: "center",
-        bgcolor: "white",
-        p: 2,
+      
       }}
     >
+    
       <Box
         sx={{
           display: "flex",
           justifyContent: "flex-end",
-          width: "70%",
+          width: "80%",
         }}
       >
         <IconButton
@@ -90,11 +143,12 @@ const Upgradeplan = () => {
       </Box>
       <Box
         sx={{
-          width: "70%",
+          width: "80%",
+          background: "",
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          mb: 4,
+          mb: 3,
         }}
       >
         <Typography
@@ -161,17 +215,17 @@ const Upgradeplan = () => {
           </ToggleButtonGroup>
         </Box>
       </Box>
+      
       {/* Pricing Plans */}
-      <Box sx={{ width: "70%" }}>
+      <Box sx={{ background: "", width: "80%" }}>
         <Grid container spacing={3}>
           {plans.map((plan) => (
             <Grid item xs={12} md={4} key={plan.title}>
               <Card
                 sx={{
                   overflow: "visible",
-
                   height: "100%",
-                  width: "100%", // Set to 100% to ensure it stretches within the grid cell
+                  width: "100%", 
                   border: plan.popular ? "1px solid #0056FF" : "1px solid #ccc",
                   position: "relative",
                   boxShadow: 2,
@@ -284,9 +338,49 @@ const Upgradeplan = () => {
           ))}
         </Grid>
       </Box>
-      <TabTables />
+
+
+
+
+      {/* tables */}
+      <Typography
+        variant="h5"
+        align="center"
+        gutterBottom
+        sx={{
+          fontSize: "var(--fontSizeHeadline2, 28px)",
+          margin: 0,
+          fontWeight: "var(--fontWeightBold, 700)",
+          lineHeight: "var(--lineHeightStandard, 1.4)",
+          color: "rgb(10, 37, 64)",
+        }}
+      >
+        Compare features by category
+      </Typography>
+
+
+      <Tabs
+        value={tabValue}
+        onChange={(e, newVal) => setTabValue(newVal)}
+        centered
+        sx={{ mb: 4, textTransform: "none" }}
+      >
+        {tabList.map((tab) => (
+          <Tab
+            key={tab.value}
+            label={tab.label}
+            value={tab.value}
+            sx={{
+              textTransform: "none",
+              color: "#476788",
+              "&:hover": { color: "#0A2540" },
+            }}
+          />
+        ))}
+      </Tabs>
+      {renderTables()}
     </Box>
   );
 };
 
-export default Upgradeplan;
+export default UpgradeplanLayout;

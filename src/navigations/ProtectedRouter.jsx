@@ -20,7 +20,7 @@ import IntegrationApp from "../Components/Dashboard-Components/IntegrationApp.js
 import Analytics from "../Components/Dashboard-Components/Analytics.jsx";
 import EventsBody from "../Components/Dashboard-Components/Analytics-Components/EventsBody.jsx";
 import RoutingAnalytics from "../Components/Dashboard-Components/Analytics-Components/RoutingAnalytics.jsx";
-import Upgradeplan from "../Components/Dashboard-Components/Upgradeplan.jsx";
+import Upgradeplanlayout from "../Components/Dashboard-Components/Upgradeplanlayout.jsx";
 
 // Routes Constants
 import { NAVIGATION_ROUTES } from "../constants/NavigationRoutes.js";
@@ -29,22 +29,7 @@ export default function ProtectedRouter() {
   const [isCollapsed, setIsCollapsed] = React.useState(false);
   const location = useLocation();
 
-  const isUpgradePage = location.pathname === NAVIGATION_ROUTES.UPGRADE_PLAN;
-
-  if (isUpgradePage) {
-    return (
-      <Routes>
-        <Route
-          path={NAVIGATION_ROUTES.UPGRADE_PLAN}
-          element={<Upgradeplan />}
-        />
-        <Route
-          path="*"
-          element={<Navigate to={NAVIGATION_ROUTES.UPGRADE_PLAN} />}
-        />
-      </Routes>
-    );
-  }
+  const hideDashNavbarRoutes = [NAVIGATION_ROUTES.UPGRADE_PLAN];
 
   return (
     <Box sx={{ display: "flex", height: "100vh" }}>
@@ -59,7 +44,7 @@ export default function ProtectedRouter() {
           width: "100%",
         }}
       >
-        <DashNavbar />
+        {!hideDashNavbarRoutes.includes(location.pathname) && <DashNavbar />}
 
         <Box>
           <Routes>
@@ -77,7 +62,6 @@ export default function ProtectedRouter() {
               path={NAVIGATION_ROUTES.INTEGRATION_AND_APPS}
               element={<IntegrationApp />}
             />
-
             {/* Availability Section */}
             <Route path="availability" element={<AvailabilityLayout />}>
               <Route path="schedules" element={<Schedules />} />
@@ -93,6 +77,11 @@ export default function ProtectedRouter() {
               <Route path="events" element={<EventsBody />} />
               <Route path="routing" element={<RoutingAnalytics />} />
             </Route>
+
+            <Route
+              path={NAVIGATION_ROUTES.UPGRADE_PLAN}
+              element={<Upgradeplanlayout />}
+            />
 
             {/* admin center routes */}
             <Route

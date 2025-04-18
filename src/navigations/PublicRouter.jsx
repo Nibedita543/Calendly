@@ -11,7 +11,7 @@ export default function PublicRouter() {
     <>
       {/* header */}
       <Navbar />
-      <Box sx={{ mt: 20 }}>
+      <Box sx={{ mt: 20,width:"100%",height:"650px",backgroundColor:"#f5f5f5" }}>
         <Routes>
           <Route path="/" element={<SignUpPage />} />
           <Route path="/login" element={<Login />} />
@@ -19,7 +19,7 @@ export default function PublicRouter() {
         </Routes>
       </Box>
       {/* footer */}
-      <Box sx={{ mt: 15 }}>
+      <Box sx={{ mt: 10 }}>
         <Footer />
       </Box>
     </>
