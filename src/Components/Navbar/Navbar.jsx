@@ -10,9 +10,49 @@ import TopNavbar from "./TopNavbar.jsx";
 const Navbar = () => {
   const location = useLocation();
   return (
-    <div className="navbar-container">
+    <div
+      className="navbar-container"
+      sx={{
+        "& .navbar": {
+          display: "flex",
+          alignItems: "center",
+          height: {
+            xs: "50px",
+            sm: "50px",
+            md: "75px",
+            lg: "75px",
+          },
+        },
+      }}
+    >
       <TopNavbar />
-      <AppBar position="static" className="navbar">
+      <AppBar
+        position="static"
+        className="navbar"
+        sx={{
+          "& .navbar-toolbar": {
+            display: "flex",
+            alignItems: "center",
+            width: {
+              xs: "100%", // <=600px
+              sm: "100%", // <=960px
+              md: "100%", // <=1200px
+              lg: "84%", // >1200px
+            },
+            height: {
+              xs: "50px",
+              sm: "50px",
+              md: "75px",
+              lg: "75px",
+            },
+            px: { xs: 2, sm: 2 },
+            justifyContent: {
+              xs: "space-between",
+              sm: "space-between",
+            },
+          },
+        }}
+      >
         <Toolbar className="navbar-toolbar">
           <GlobalImage
             src="https://marketing-assets.calendly.com/media/logo.svg"
@@ -21,7 +61,15 @@ const Navbar = () => {
             height="100%"
             objectFit="contain"
             className="logo"
-            sx={{}}
+            sx={{
+              width: {
+                xs: "135px",
+                sm: "135px",
+                md: "180px",
+                lg: "180px",
+              },
+              height: "80%",
+            }}
             fallbackSrc="https://via.placeholder.com/120x40"
           />
           {location.pathname === "/" ? <SignUpContent /> : <LoginContent />}

@@ -7,7 +7,7 @@ export const NAVIGATION_ROUTES = {
   RESET_PASSWORD: "/reset-password",
   NOT_FOUND: "/not-found",
 
-  //   private routes
+  //  private routes
 
   EVENT_TYPES: "/event-types",
   MEETING: "/meeting",
@@ -21,7 +21,7 @@ export const NAVIGATION_ROUTES = {
   ANALYTICS: "/analytics",
   ANALYTICS_EVENTS: "/analytics/events",
   ANALYTICS_ROUTING: "/analytics/routing",
-  UPGRADE_PLAN: "/upgradeplan",
+  UPGRADE_PLAN: "/upgrade-plan",
   INTEGRATION_AND_APPS: "/integration&apps",
 
   // admin routes

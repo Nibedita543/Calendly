@@ -3,48 +3,51 @@ import {
   Box,
   Button,
   IconButton,
-  Drawer,
   List,
   ListItem,
   ListItemText,
   Popover,
   Typography,
   Grid,
+  Divider,
+  ListItemIcon,
   useMediaQuery,
   useTheme,
 } from "@mui/material";
 import { FaAngleDown } from "react-icons/fa";
-import { Menu, Close } from "@mui/icons-material";
+import { Menu, Close, ChevronRight } from "@mui/icons-material";
 import ResourcesPopover from "./ResourcesPopover.jsx";
+import CustomDrawer from "../Main-Components/Drawer.jsx"; // ✅ Renamed import
+
 export default function LoginContent() {
   const [anchorEl, setAnchorEl] = useState(null);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
   const handleClick = (event) => setAnchorEl(event.currentTarget);
   const handleClose = () => setAnchorEl(null);
   const toggleDrawer = () => setDrawerOpen(!drawerOpen);
   const open = Boolean(anchorEl);
   const id = open ? "solutions-popover" : undefined;
+
   const menuItems = [
     { label: "Product", onClick: () => {} },
-    { label: "Solutions", onClick: handleClick, hasDropdown: true },
+    { label: "Solutions", onClick: handleClick, hasArrow: true },
     { label: "Enterprise", onClick: () => {} },
     { label: "Pricing", onClick: () => {} },
   ];
+
   return (
-    <
-      // Box
-      // sx={{ display: "flex", alignItems: "center", marginLeft: "auto", gap: 2 }}
-    >
-      {/* Center nav items - shown only on md+ */}
+    <>
+      {/* Desktop Menu */}
       {!isMobile && (
         <Box sx={{ display: "flex", alignItems: "center", gap: 3 }}>
           {menuItems.map((item, index) => (
             <Button
               key={index}
               onClick={item.onClick}
-              aria-describedby={item.hasDropdown ? id : undefined}
+              aria-describedby={item.hasArrow ? id : undefined}
               sx={{
                 display: "flex",
                 alignItems: "center",
@@ -59,7 +62,7 @@ export default function LoginContent() {
               }}
             >
               {item.label}
-              {item.hasDropdown && (
+              {item.hasArrow && (
                 <FaAngleDown style={{ color: "rgb(71, 103, 136)" }} />
               )}
             </Button>
@@ -69,17 +72,22 @@ export default function LoginContent() {
       )}
 
       {/* Right side: Get started + menu icon */}
-      <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+      <Box sx={{ display: "flex", alignItems: "center" }}>
         <Button
           variant="contained"
           size="large"
           sx={{
+            color: "#fff",
+            border: "1px solid rgb(0, 107, 255)",
             backgroundColor: "rgb(0, 107, 255)",
-            color: "white",
             fontWeight: 600,
-            textTransform: "none",
             borderRadius: "8px",
-            px: 2,
+            textTransform: "none",
+            px: { xs: "8px", sm: "10px", md: "19px" },
+            py: { xs: "8px", sm: "8px", md: "10px" },
+            fontSize: { xs: "0.75rem", sm: "0.81rem", md: "0.875rem" },
+            lineHeight: { xs: 1.2, sm: 1.3, md: 1.4 },
+            height: { xs: "31px", sm: "40px", md: "44px" },
             "&:hover": {
               backgroundColor: "rgb(0, 78, 186)",
             },
@@ -95,7 +103,7 @@ export default function LoginContent() {
         )}
       </Box>
 
-      {/* Solutions Popover (desktop only) */}
+      {/* Popover: Solutions */}
       <Popover
         id={id}
         open={open}
@@ -246,40 +254,14 @@ export default function LoginContent() {
           </Grid>
         </Box>
       </Popover>
-      {/* Drawer for mobile nav */}
-      <Drawer
-        anchor="right"
-        open={drawerOpen}
-        onClose={toggleDrawer}
-        PaperProps={{
-          sx: {
-            width: "100%",
-            backgroundColor: "#fff",
-            p: 3,
-          },
-        }}
-      >
-        <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
-          <IconButton onClick={toggleDrawer}>
-            <Close />
-          </IconButton>
-        </Box>
-        <List>
-          {menuItems.map((item, index) => (
-            <ListItem button key={index} onClick={item.onClick}>
-              <ListItemText
-                primary={item.label}
-                primaryTypographyProps={{
-                  fontSize: 20,
-                  fontWeight: 600,
-                  color: "rgb(11, 53, 88)",
-                }}
-              />
-            </ListItem>
-          ))}
-        </List>
-        <ResourcesPopover />
-      </Drawer>
+
+      {/* ✅ Mobile Drawer */}
+      <CustomDrawer
+        drawerOpen={drawerOpen}
+        toggleDrawer={toggleDrawer}
+        menuItems={menuItems}
+          
+      />
     </>
   );
 }
