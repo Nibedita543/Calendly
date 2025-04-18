@@ -94,7 +94,6 @@ export default function LoginContent() {
           </IconButton>
         )}
       </Box>
-
       {/* Solutions Popover (desktop only) */}
       <Popover
         id={id}
