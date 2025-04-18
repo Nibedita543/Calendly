@@ -1,13 +1,16 @@
-import { Drawer, IconButton } from "@mui/material";
+import { Drawer, IconButton, Typography } from "@mui/material";
 import React from "react";
-import MenuIcon from "@mui/icons-material/Menu";
+import leftchevron from '../../assets/leftcheveron.svg'
 import LogoofCalendly from "./LogoofCalendly/LogoofCalendly";
 import CreateButton from "../Main-Components/CreateButton.jsx";
 import SideBarMenu from "./SideBarMenu/SideBarMenu";
 import ToggledCreateButton from "./CreateButton/ToggledCreateButton";
+import { Link, useLocation } from "react-router-dom";
+import { NAVIGATION_ROUTES } from "../../constants/NavigationRoutes.js";
 
 export default function Sidebar({ isCollapsed, setIsCollapsed }) {
   const toggleCollapse = () => setIsCollapsed((prev) => !prev);
+  const location = useLocation();
 
   return (
     <Drawer
@@ -30,7 +33,44 @@ export default function Sidebar({ isCollapsed, setIsCollapsed }) {
         <MenuIcon />
       </IconButton> */}
       <LogoofCalendly isCollapsed={isCollapsed} handleToggle={toggleCollapse} />
-      {isCollapsed ? <ToggledCreateButton /> : <CreateButton />}
+      {location.pathname.split("/")[1] !== "admin" ? (
+        isCollapsed ? (
+          <ToggledCreateButton />
+        ) : (
+          <CreateButton />
+        )
+      ) : (
+        <>
+          <Link
+            to={NAVIGATION_ROUTES.EVENT_TYPES}
+            style={{
+              textDecoration: "none",
+              fontSize: "18px",
+              padding: "8px 12px 12px 4px",
+              color: "#0069FF",
+              fontWeight: "600",
+              display: "flex",
+              alignItems: "center",
+              gap:"5px"
+            }}
+          >
+            <img
+              src={leftchevron}
+              style={{ height: "16px", width: "16px", color: "#0069FF" }}
+            />
+            Back to home
+          </Link>
+          <Typography
+            gutterBottom
+            fontSize={18}
+            fontWeight="bold"
+            padding="8px 16px 24px 16px"
+            mb={2}
+          >
+            Admin Center
+          </Typography>
+        </>
+      )}
       <SideBarMenu isCollapsed={isCollapsed} />
     </Drawer>
   );

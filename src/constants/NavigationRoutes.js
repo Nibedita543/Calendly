@@ -28,4 +28,9 @@ export const NAVIGATION_ROUTES = {
   ADMIN_DASHBOARD: "/admin",
   ADMIN_USERS: "/admin/users",
   ADMIN_GROUPS: "/admin/groups",
+  ADMIN_GROUPS: "/admin/LoggingIn",
+  ADMIN_GROUPS: "/admin/billing",
+  ADMIN_GROUPS: "/admin/security",
+  ADMIN_GROUPS: "/admin/permission",
+  ADMIN_GROUPS: "/admin/manageevents",
 };

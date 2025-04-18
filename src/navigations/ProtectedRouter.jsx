@@ -24,6 +24,8 @@ import Upgradeplan from "../Components/Dashboard-Components/Upgradeplan.jsx";
 
 // Routes Constants
 import { NAVIGATION_ROUTES } from "../constants/NavigationRoutes.js";
+import User from "../Components/AdminDashboard/user.jsx";
+import Admindashboard from "../Components/AdminDashboard/Dashboard/Admindashboard.jsx";
 
 export default function ProtectedRouter() {
   const [isCollapsed, setIsCollapsed] = React.useState(false);
@@ -97,11 +99,11 @@ export default function ProtectedRouter() {
             {/* admin center routes */}
             <Route
               path={NAVIGATION_ROUTES.ADMIN_DASHBOARD}
-              element={<>hiiiiiiiiiiiii</>}
+              element={<Admindashboard/>}
             />
             <Route
               path={NAVIGATION_ROUTES.ADMIN_USERS}
-              element={<>Admin users</>}
+              element={<User/>}
             />
             <Route
               path={NAVIGATION_ROUTES.ADMIN_GROUPS}
