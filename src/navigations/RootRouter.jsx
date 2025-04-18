@@ -3,7 +3,7 @@ import PublicRouter from "./PublicRouter";
 import ProtectedRouter from "./ProtectedRouter";
 
 export default function RootRouter() {
-  const isAuthenticated = !!localStorage.getItem("token"); // Replace with actual auth logic
+  const isAuthenticated = !!localStorage.getItem("token");
 
   return <div>{true ? <ProtectedRouter /> : <PublicRouter />}</div>;
 }

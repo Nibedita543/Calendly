@@ -11,10 +11,10 @@ const ChromeExtension = () => {
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "center",
-        mt: 5,
+        mt: 1,
         backgroundColor: "transparent",
         width: "100%",
-        height: "38px",
+        height: "33px",
         maxWidth: "996px",
       }}
     >
@@ -22,7 +22,7 @@ const ChromeExtension = () => {
         variant="contained"
         sx={{
           display: "flex",
-          width: "fit-content",
+          width: "70%",
           height: "100%",
           alignItems: "center",
           gap: 1, // Adjusted gap based on your style
@@ -33,8 +33,9 @@ const ChromeExtension = () => {
           color: "rgb(11, 53, 88)",
           transition: "0.2s",
           border: "none",
+          boxShadow: "none",
           "&:hover": {
-            backgroundColor: "#E0E7FC", // Adjusted hover effect
+            backgroundColor: "#E0E7FC", 
           },
         }}
       >
@@ -47,7 +48,7 @@ const ChromeExtension = () => {
           borderRadius="50%" // Optional: to make the image circular
         />
         Get the Chrome Extension
-        <img src={rightArrow} width="20px"/>
+        <img src={rightArrow} width="16px"/>
       </GlobalButton>
     </Box>
   );

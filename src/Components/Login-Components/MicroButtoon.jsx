@@ -17,14 +17,14 @@ const MicroButton = () => {
         />
       }
       sx={{
-        width: "90%",
+        width: "93%",
         cursor: "pointer",
         transition: "0.2s linear, background-position 1ms, background-size 1ms",
         color: "rgb(71, 103, 136)", // Text color
         border: "1px solid rgb(71, 103, 136)",
         backgroundColor: "transparent",
         padding: "5px 10px",
-        fontSize: "1.125rem",
+        fontSize: "1.120rem",
         position: "relative",
         height: "fit-content",
         flexDirection: "row",

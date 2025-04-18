@@ -66,8 +66,5 @@ export const SidebarData = [
     icon: <AiOutlineCrown style={{ fontSize: "20px" }} />,
     link: NAVIGATION_ROUTES.ADMIN_DASHBOARD,
   },
-  // {
-  //   title: "Help",
-  //   icon: <IoIosHelpCircleOutline style={{ fontSize: "20px" }} />,
-  // },
+ 
 ];

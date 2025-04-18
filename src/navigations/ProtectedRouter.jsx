@@ -1,12 +1,15 @@
 import React from "react";
-import { Navigate, Outlet, Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes, useLocation } from "react-router-dom";
+import { Box } from "@mui/material";
+
+// Layout Components
 import Sidebar from "../Components/Sidebar/Sidebar";
 import DashNavbar from "../Components/Main-Components/Dashnavbar.jsx";
+
+// Pages
 import Dashboard from "../Pages/DASHBOARD/Dashboard";
-import { Box } from "@mui/material";
-import Meeting from "../../src/Components/Dashboard-Components/Meeting";
+import Meeting from "../Components/Dashboard-Components/Meeting";
 import Contacts from "../Components/Dashboard-Components/Contacts";
-import { NAVIGATION_ROUTES } from "../constants/NavigationRoutes.js";
 import AvailabilityLayout from "../Components/Dashboard-Components/Availability.jsx";
 import Schedules from "../Components/Dashboard-Components/Availability-Component/Schedules.jsx";
 import Holidays from "../Components/Dashboard-Components/Availability-Component/Holidays.jsx";
@@ -15,12 +18,33 @@ import Workflow from "../Components/Dashboard-Components/Workflow.jsx";
 import Routing from "../Components/Dashboard-Components/Routing.jsx";
 import IntegrationApp from "../Components/Dashboard-Components/IntegrationApp.jsx";
 import Analytics from "../Components/Dashboard-Components/Analytics.jsx";
-import RoutingBody from "../Components/Dashboard-Components/RoutingBody-component/RoutingBody.jsx";
 import EventsBody from "../Components/Dashboard-Components/Analytics-Components/EventsBody.jsx";
 import RoutingAnalytics from "../Components/Dashboard-Components/Analytics-Components/RoutingAnalytics.jsx";
+import Upgradeplan from "../Components/Dashboard-Components/Upgradeplan.jsx";
+
+// Routes Constants
+import { NAVIGATION_ROUTES } from "../constants/NavigationRoutes.js";
 
 export default function ProtectedRouter() {
   const [isCollapsed, setIsCollapsed] = React.useState(false);
+  const location = useLocation();
+
+  const isUpgradePage = location.pathname === NAVIGATION_ROUTES.UPGRADE_PLAN;
+
+  if (isUpgradePage) {
+    return (
+      <Routes>
+        <Route
+          path={NAVIGATION_ROUTES.UPGRADE_PLAN}
+          element={<Upgradeplan />}
+        />
+        <Route
+          path="*"
+          element={<Navigate to={NAVIGATION_ROUTES.UPGRADE_PLAN} />}
+        />
+      </Routes>
+    );
+  }
 
   return (
     <Box sx={{ display: "flex", height: "100vh" }}>
@@ -31,17 +55,16 @@ export default function ProtectedRouter() {
       <Box
         sx={{
           flexGrow: 1,
-          // ml: isCollapsed ? "64px" : "270px",
           transition: "margin 0.3s ease-in-out",
           width: "100%",
         }}
       >
         <DashNavbar />
 
-        <Box sx={{}}>
+        <Box>
           <Routes>
             <Route
-              path={"/"}
+              path="/"
               element={<Navigate to={NAVIGATION_ROUTES.EVENT_TYPES} />}
             />
             <Route
@@ -55,27 +78,17 @@ export default function ProtectedRouter() {
               element={<IntegrationApp />}
             />
 
-            <Route path="/" element={<AvailabilityLayout />}>
-              <Route path={"availability/schedules"} element={<Schedules />} />
-              <Route
-                path={"availability/holidays"}
-                element={
-                  <>
-                    <Holidays />
-                  </>
-                }
-              />
-              <Route
-                path={"availability/settings"}
-                element={
-                  <>
-                    <Settings />
-                  </>
-                }
-              />
+            {/* Availability Section */}
+            <Route path="availability" element={<AvailabilityLayout />}>
+              <Route path="schedules" element={<Schedules />} />
+              <Route path="holidays" element={<Holidays />} />
+              <Route path="settings" element={<Settings />} />
             </Route>
+
             <Route path={NAVIGATION_ROUTES.WORKFLOW} element={<Workflow />} />
             <Route path={NAVIGATION_ROUTES.ROUTING} element={<Routing />} />
+
+            {/* Analytics with nested routes */}
             <Route path={NAVIGATION_ROUTES.ANALYTICS} element={<Analytics />}>
               <Route path="events" element={<EventsBody />} />
               <Route path="routing" element={<RoutingAnalytics />} />
@@ -96,6 +109,10 @@ export default function ProtectedRouter() {
             />
 
             <Route path="*" element={<Navigate to="/" />} />
+            <Route
+              path="*"
+              element={<Navigate to={NAVIGATION_ROUTES.EVENT_TYPES} />}
+            />
           </Routes>
         </Box>
       </Box>

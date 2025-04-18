@@ -9,8 +9,8 @@ const Header = () => {
       textAlign="center"
       gutterBottom
       sx={{
-        fontSize: "2.343rem",
-        lineHeight: 1.2,
+        fontSize: "2.2rem",
+        lineHeight: 1.25,
         fontWeight: 700,
         whiteSpace: "nowrap",
         color: "rgb(11, 53, 88)",

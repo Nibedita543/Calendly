@@ -35,7 +35,7 @@ function Login() {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          width: "100%",
+          width: "93%",
           gap: "20px",
         }}
       >
@@ -43,8 +43,9 @@ function Login() {
         <ContinueButton />
         <Divider
           sx={{
-            width: "90%",
+            width: "93%",
             color: "rgb(71, 103, 136)",
+            fontSize: "0.875rem",
           }}
         >
           OR
